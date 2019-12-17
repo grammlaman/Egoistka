@@ -1,4 +1,169 @@
 $unit : 'px'
+a
+  color: $headGray
 .section
   +w($mobile#{$unit})
   margin: 0 auto
+.head,.foot
+  background-image: url('../img/head-bgc.png')
+  background-color: $headGray
+  background-size: 350%
+.head
+  padding: 14px 0
+  margin-bottom: 8px
+  svg
+    fill: #fff
+  &-row
+    display: flex
+    align-items: center
+  &-logo
+    flex: 0 0 145px
+    img
+      +w(145px)
+  &-like
+    height: 24px
+  &-logo,&-like
+    margin-right: auto
+  &-search
+    &-form
+      display: none
+      align-items: center
+      margin-left: 60px
+      input
+        +font(14px,$f_reg,$headGray)
+        +w(185px)
+        padding-left: 15px
+        border: none
+        border-bottom: 1px solid
+        margin-right: 5px
+      svg
+        fill: $headGray
+.mob
+  &-menu
+    +dfc
+    flex: 0 0 50px
+    margin-right: 22.5px
+  &-nav
+    +w(100%)
+    padding: 60px 0
+    display: none
+    flex-direction: column
+    align-items: flex-start
+    background-color: #fff
+    position: fixed
+    z-index: 90
+    top: 0
+    right: 0
+    &-but
+      +font(14px,$f_bold)
+      +w(100%)
+      padding: 10px 60px
+      display: flex
+      align-items: center
+    &-button
+      padding: 10px 18px
+      svg
+        fill: $pink
+        margin-right: 18px
+    &-last
+      background-color: $pink
+      color: #fff
+      svg
+        fill: #fff
+    &-close
+      padding: 0
+      position: fixed
+      top: 23px
+      left: 18px
+      svg
+        fill: $pink
+  &-none
+    display: none!important
+
+
+.main-slider
+  background-image: url('../img/slider-bgc.jpg')
+  &-dots
+    +w(246px)
+    margin: auto
+    display: flex
+    justify-content: space-between
+    position: absolute
+    right: 0
+    left: 0
+    bottom: 15px
+  &-dot
+    +wh(62px,6px)
+    background-color: #fff
+  &-slide
+    position: relative
+    &-cont
+      position: relative
+      z-index: 10
+      padding: 10px 20px 20px
+      div:first-child
+        &>p
+          +font(18px,$f_bold)
+          &:first-child
+            margin-bottom: 27px
+          &:nth-child(2)
+            margin-bottom: 16px
+        &>span
+          font-family: $f_bold
+        button
+          +w(100%)
+          margin-top: 170px
+          opacity: 50%
+          padding: 17px 0
+          border: 1px solid #fff
+          background-color: $pink
+          span
+            text-transform: uppercase
+            color: #fff
+      div:last-child
+        +w(160px)
+        margin: auto
+        position: absolute
+        bottom: 70px
+        right: 0
+        left: 0
+    &-bgc
+      +wh(100%)
+      background-color: #fff
+      opacity: 80%
+      position: absolute
+      top: 0
+      right: 0
+.pink
+  color: $pink
+.foot
+  padding-bottom: 30px
+  button
+    +font(14px,$f_reg)
+  a
+    margin-top: 20px
+  span
+    color: #fff
+  &-row,&-copy
+    display: flex
+    flex-wrap: wrap
+  &-block
+    margin-right: 30px
+  &-bold
+    a
+      +font(14px,$f_bold,#fff)
+      display: block
+  &-tel
+    +font(16px,$f_bold,#fff)
+    display: block
+  &-pink
+    color: $pink
+    display: block
+  &-copy
+    margin-top: 45px
+    a
+      text-decoration: underline
+#head-search:checked~form
+  display: flex
+#mob-nav:checked~.mob-nav
+  display: flex

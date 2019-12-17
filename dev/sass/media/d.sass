@@ -1,3 +1,43 @@
 $unit: 'px'
 .section
   +w($desktop#{$unit})
+.head
+  padding: 25px 0
+  &-tel
+    margin-right: 25px
+  &-cons
+    margin-right: 132px
+  &-logo
+    flex: 0 0 224px
+    margin-right: 70px
+    img
+      +w(224px)
+.mob
+  &-nav
+    a
+      font-family: $f_bold
+      text-transform: uppercase
+
+
+.main-slider
+  &-slide
+    &-cont
+      padding: 40px 80px
+      div:first-child
+        &>p
+          font-size: 36px
+        button
+          span
+            letter-spacing: 3px
+
+
+
+
+
+.foot
+  &-block:nth-child(2)
+    margin-right: 211px
+  &-copy
+    margin-top: 110px
+    span
+      margin-right: 110px

@@ -1,2 +1,26 @@
 .section
   +w($tablet-large#{$unit})
+.head,.foot
+  background-size: 100%
+.head
+  &-login,&-phone,&-cons
+    span
+      color: $pink
+  &-tel
+    font-family: $f_bold
+    font-size: 16px
+  &-search
+    &-form
+      input
+        +w(185px)
+.tab-none
+  display: inherit
+
+
+
+
+
+.foot
+  &-copy
+    span
+      margin-right: 130px

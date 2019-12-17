@@ -1,2 +1,93 @@
 .section
   +w($tablet#{$unit})
+.head
+  a
+    color: #fff
+  &-row
+    justify-content: space-between
+  &-search
+    label
+      display: none
+    &-form
+      display: flex
+      margin-left: 0
+      input
+        +w(100px)
+  &-second
+    margin-bottom: 8px
+    &:before,&:after
+      display: table
+      content: ''
+      +wh(100%,1px)
+      background-color: $headGray
+  &-phone,&-login,&-cart
+    display: flex
+    align-items: center
+    svg
+      margin-right: 5px
+    span
+      +font(14px,$f_reg,#fff)
+.mob
+  &-none
+    display: inherit!important
+  &-menu
+    display: none
+  &-nav
+    display: flex
+    flex-direction: row
+    align-items: center
+    justify-content: space-between
+    position: inherit
+    padding: 12px 0
+    &-but
+      +w(auto)
+      padding: 0
+      font-family: $f_medium
+    &-button,&-close
+      display: none
+.tab-none
+  display: none
+.main-slider
+  &-slide
+    &-arrow
+      background-image: url('../img/arrow-slider.png')
+      &-right
+        transform: rotate(180deg)
+    &-cont
+      display: flex
+      align-items: center
+      justify-content: space-between
+      div:first-child
+        flex: 0 0 50%
+        &>p
+          font-size: 24px
+        &>span
+          font-size: 18px
+        button
+          margin-top: 30px
+          +w(287px)
+      div:last-child
+        +w(405px)
+        position: static
+        margin: 0
+
+
+
+.foot
+  padding-top: 40px
+  a
+    margin-top: 0
+  svg
+    fill: $pink
+  &-row
+    justify-content: space-between
+  &-block
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    height: 110px
+    margin-right: 0
+  &-copy
+    margin-top: 70px
+    span
+      margin-right: 43px

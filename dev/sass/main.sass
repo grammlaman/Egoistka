@@ -1,9 +1,15 @@
 @import "../../../../core/mixins/reset"
 @import "../../../../core/mixins/mixins"
 @import "vars"
+
+button,input
+	font-family: inherit
+
 $font_body: 14px
 
-//+font_inc($f_reg,'Montserrat-Light.ttf')
++font_inc($f_reg,'MontserratRegular.otf')
++font_inc($f_medium,'MontserratMedium.otf')
++font_inc($f_bold,'MontserratBold.otf')
 .set
 	+wh(100%)
 	overflow: hidden
@@ -12,7 +18,7 @@ html,body
 	overflow-x: hidden
 body
 	+wh(100%)
-	//+font($font_body,$f_reg,$gray)
+	+font($font_body,$f_reg,$headGray)
 	//+bg(100%,url(../img/bb.png),left bottom,no-repeat)
 $unit: 'px'
 @import "media/m"
@@ -24,8 +30,4 @@ $unit: 'px'
 	@import "media/tl"
 +mq($desktop#{$unit})
 	@import "media/d"
-+mq($desktop-large#{$unit})
-	@import "media/dl"
-+mq($desktop-fullHD#{$unit})
-	@import "media/dlf"
 @import "grid/grid"

@@ -3,6 +3,17 @@ append vars
   -
     page_title= 'Главная страница'
 block content
-    main
-
-    include parts/slider
+  main
+    .main-slider
+      .section
+        .main-slider-slide
+          .main-slider-slide-cont
+            div
+              p #[span.pink 80% женщин] носят неправильный размер бюстгальтера.
+              p.pink А Вы?
+              span Разрешите помочь вам найти наиболее подходящий размер не выходя из дома.
+              button
+                span Перейти в каталог
+            div
+              +img('vtz-graph-80.png')
+          .main-slider-slide-bgc
