@@ -18,7 +18,6 @@ $unit: 'px'
       font-family: $f_bold
       text-transform: uppercase
 
-
 .main-slider
   &-slide
     &-cont
@@ -29,10 +28,45 @@ $unit: 'px'
         button
           span
             letter-spacing: 3px
+.catalog
+  &-unit
+    +wh(554px,209px)
+    &-photo
+      height: 165px
+  &-units
+    padding: 10px 20px
 
+.stocks
+  &-unit
+    +wh(555px,273px)
+  &-photo
+    flex: 0 0 270px
+  &-desc
+    flex: 0 0 285px
+    svg
+      +w(38px)
+  &-h3
+    font-size: 95px
+    line-height: 95px
+  &-h4
+    font-size: 41px
+    line-height: 41px
+  &-h6
+    font-size: 24px
+    line-height: 24px
 
-
-
+.new
+  &-units
+    +w(1100px)
+  &-slide
+    +w(265px)
+    margin: 0 5px
+  &-photo
+    height: 350px
+  &-desc
+    &-row:last-child
+      span
+        font-size: 24px
 
 .foot
   &-block:nth-child(2)
