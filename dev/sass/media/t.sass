@@ -1,10 +1,15 @@
 .section
   +w($tablet#{$unit})
+header
+  height: 130px
 .head
   a
     color: #fff
   &-row
     justify-content: space-between
+  &-tel
+    font-family: $f_bold
+    font-size: 16px
   &-search
     label
       display: none
@@ -15,6 +20,9 @@
         +w(100px)
   &-second
     margin-bottom: 8px
+    position: static
+    display: block
+    background-color: #fff
     &:before,&:after
       display: table
       content: ''
@@ -27,6 +35,16 @@
       margin-right: 5px
     span
       +font(14px,$f_reg,#fff)
+  &-scroll
+    .head-cat
+      transform: translateY(-8px)
+  &-cat
+    &-basis
+      display: flex
+      align-items: flex-start
+      height: 70vh
+      &>div
+        flex: 0 0 50%
 .mob
   &-none
     display: inherit!important
@@ -38,16 +56,32 @@
     align-items: center
     justify-content: space-between
     position: inherit
-    padding: 12px 0
+    padding: 0
     &-but
       +w(auto)
-      padding: 0
+      padding: 12px 0
       font-family: $f_medium
     &-button,&-close
       display: none
-.tab-none
-  display: none
 .main-slider
+  &-dots
+    bottom: 10px
+  &-cont
+    .slick-arrow
+      +wh(14px)
+      display: block
+      border-top: 2px solid $headGray
+      border-right: 2px solid $headGray
+      z-index: 10
+    .slick-next
+      transform: rotate(45deg)
+      right: 10px
+    .slick-prev
+      transform: rotate(-135deg)
+      left: 10px
+    .slick-next,.slick-prev
+      &:before
+        display: none
   &-slide
     &-arrow
       background-image: url('../img/arrow-slider.png')
@@ -57,6 +91,7 @@
       display: flex
       align-items: center
       justify-content: space-between
+      padding: 20px 30px
       div:first-child
         flex: 0 0 50%
         &>p
@@ -97,12 +132,13 @@
   &-h3
     font-size: 60px
     line-height: 60px
-  &-h4
-    font-size: 30px
-    line-height: 30px
   &-h6
     font-size: 14px
     line-height: 14px
+  &-gray,&-yellow
+    .stocks-h3
+      font-size: 30px
+      line-height: 30px
 
 .new-units
   +w(595px)
@@ -110,6 +146,36 @@
     right: -20px
   .slick-prev
     left: -20px
+.about
+  padding-bottom: 0
+  &:before,&:after
+    +w(728px)
+  &-label
+    display: none
+  &-cont
+    max-height: inherit
+  &-photo,&-div
+    flex: 0 0 49%
+  &-unit
+    display: flex
+    align-items: center
+    justify-content: space-between
+    &:nth-child(3)
+      .about-photo
+        order: 10
+
+
+
+
+
+
+
+
+
+
+
+.tab-none
+  display: none!important
 .foot
   padding-top: 40px
   a
@@ -128,3 +194,6 @@
     margin-top: 70px
     span
       margin-right: 43px
+#head-cat:checked~.header .mob-nav-but-cat
+  span
+    display: block

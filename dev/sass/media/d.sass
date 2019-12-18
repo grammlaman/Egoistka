@@ -1,22 +1,64 @@
 $unit: 'px'
 .section
   +w($desktop#{$unit})
+header
+  height: 173px
 .head
+  transition: .35s ease
   padding: 25px 0
   &-tel
     margin-right: 25px
   &-cons
     margin-right: 132px
   &-logo
+    transition: .35s ease
     flex: 0 0 224px
     margin-right: 70px
     img
       +w(224px)
+  &-scroll
+    .head
+      padding: 10px 0
+      .head-logo
+        flex: 0 0 150px
+  &-cat
+    &-basis
+      flex-direction: row
+      height: 50vh
+    &-units
+      justify-content: space-around
+    &-unit
+      margin-right: 0
+  &-hover
+    transition: .35s ease
+    &:hover
+      svg
+        fill: $headGray
+      &,span
+        text-decoration: underline
+    &-another
+      transition: .35s ease
+      &:hover
+        svg
+          fill: #fff
+        &,span
+          text-decoration: none
+    &-pink
+      transition: .35s ease
+      &:hover
+        svg
+          fill: $pink
+        &,span
+          text-decoration: underline
 .mob
   &-nav
-    a
+    &-but
       font-family: $f_bold
       text-transform: uppercase
+      &:hover
+        color: $pink
+        span
+          display: block
 
 .main-slider
   &-slide
@@ -31,6 +73,13 @@ $unit: 'px'
 .catalog
   &-unit
     +wh(554px,209px)
+    transition: .35s ease
+    &:hover
+      background-color: $pink
+      span
+        color: #fff
+      svg
+        fill: #fff
     &-photo
       height: 165px
   &-units
@@ -48,12 +97,13 @@ $unit: 'px'
   &-h3
     font-size: 95px
     line-height: 95px
-  &-h4
-    font-size: 41px
-    line-height: 41px
   &-h6
     font-size: 24px
     line-height: 24px
+  &-gray,&-yellow
+    .stocks-h3
+      font-size: 41px
+      line-height: 41px
 
 .new
   &-units
@@ -64,10 +114,58 @@ $unit: 'px'
   &-photo
     height: 350px
   &-desc
+    &-row
+      button
+        svg
+          transition: .35s ease
+        &:hover
+          svg
+            fill: $headGray
     &-row:last-child
       span
         font-size: 24px
 
+.about
+  &:before,&:after
+    +w(1170px)
+  &-photo,&-div
+    flex: 0 0 575px
+.news
+  &-slider
+    .slick-next
+      right: -130px
+    .slick-prev
+      left: -130px
+
+
+
+
+
+
+
+
+
+
+.button-hover
+  overflow: hidden
+  position: relative
+  span:last-child
+    +wh(100%)
+    display: block
+    background-color: #fff
+    transform: translateX(100%)
+    transition: .35s ease
+    position: absolute
+    top: 0
+    border: 1px solid $headGray
+  span:first-child
+    position: relative
+    z-index: 50
+  &:hover
+    span:first-child
+      color: $headGray
+    span:last-child
+      transform: translateX(0)
 .foot
   &-block:nth-child(2)
     margin-right: 211px

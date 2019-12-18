@@ -6,15 +6,29 @@
   &-login,&-phone,&-cons
     span
       color: $pink
-  &-tel
-    font-family: $f_bold
-    font-size: 16px
   &-search
     &-form
       input
         +w(185px)
+  &-cat
+    &-basis
+      flex-direction: column
+    &-units
+      display: flex
+      flex-wrap: wrap
+    &-unit
+      margin-right: 10px
+.main-slider
+  &-cont
+    .slick-next
+      right: 15px
+    .slick-prev
+      left: 15px
+  &-slide
+    &-cont
+      padding: 20px 40px
 .tab-none
-  display: inherit
+  display: inherit!important
 .main-title
   margin: 20px 0
   h2
@@ -48,12 +62,13 @@
   &-h3
     font-size: 76px
     line-height: 76px
-  &-h4
-    font-size: 38px
-    line-height: 38px
   &-h6
     font-size: 20px
     line-height: 20px
+  &-gray,&-yellow
+    .stocks-h3
+      font-size: 38px
+      line-height: 38px
   &-button
     height: 44px
     span
@@ -63,6 +78,7 @@
 .new
   &-units
     +w(824px)
+    padding: 20px 0
   &-slide
     +w(200px)
   &-photo
@@ -72,6 +88,46 @@
     &-row
       span
         font-size: 16px
+
+.about
+  padding-top: 20px
+  &:before,&:after
+    +w(1004px)
+  &-padding
+    margin: 20px auto 0
+  &-title
+    h3
+      span
+        font-size: 18px
+        display: inline-block
+.news
+  &-title
+    h3
+      font-size: 18px
+  &-slider
+    +w(905px)
+    margin: auto
+    .slick-next
+      right: -30px
+    .slick-prev
+      left: -30px
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 .foot
   &-copy

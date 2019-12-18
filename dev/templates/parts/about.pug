@@ -1,0 +1,9 @@
+each base in articles
+	.about-unit
+		.about-photo
+			+img(base['img'])
+		.about-div
+			.about-sub-title
+				h4!= base['title']
+			.about-desc
+				p!= base['desc']

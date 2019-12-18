@@ -1,4 +1,6 @@
 $unit : 'px'
+header
+  height: 79px
 a
   color: $headGray
 .section
@@ -10,7 +12,13 @@ a
   background-size: 350%
 .head
   padding: 14px 0
-  margin-bottom: 8px
+  &-scroll
+    +w(100%)
+    position: fixed
+    z-index: 99
+    .head
+      &-second
+        transform: translateY(0)
   svg
     fill: #fff
   &-row
@@ -38,6 +46,50 @@ a
         margin-right: 5px
       svg
         fill: $headGray
+  &-second
+    +wh(100%)
+    transition: .35s ease
+    transform: translateY(8px)
+    position: fixed
+    z-index: 91
+    display: none
+    background-color: rgba(36,36,34,0.8)
+  &-cat
+    +w(100%)
+    transition: .35s ease
+    padding: 20px 10px
+    position: absolute
+    z-index: 20
+    background-color: #fff
+    box-shadow: 0 10px 10px rgba(0,0,0,0.5)
+    display: none
+    &-basis
+      height: 80vh
+      overflow: auto
+    &-unit
+      +wh(285px,113px)
+      border: 1px solid $headGray
+      display: block
+      margin: 10px 0
+    &-title
+      font-family: $f_bold
+      text-transform: uppercase
+      margin: 20px 0
+    &-photo
+      +wh(100%,88px)
+      overflow: hidden
+      img
+        min-width: 100%
+        min-height: 100%
+    &-name
+      display: flex
+      align-items: center
+      span
+        font-family: $f_bold
+        margin: 0 10px 0 5px
+      svg
+        fill: $pink
+
 .mob
   &-menu
     +dfc
@@ -45,13 +97,12 @@ a
     margin-right: 22.5px
   &-nav
     +w(100%)
-    padding: 60px 0
-    display: none
+    padding: 60px 0 0
+    display: flex
     flex-direction: column
     align-items: flex-start
     background-color: #fff
     position: fixed
-    z-index: 90
     top: 0
     right: 0
     &-but
@@ -60,6 +111,13 @@ a
       padding: 10px 60px
       display: flex
       align-items: center
+      position: relative
+      span
+        +wh(100%,5px)
+        background-color: #000
+        position: absolute
+        display: none
+        bottom: 0
     &-button
       padding: 10px 18px
       svg
@@ -82,6 +140,9 @@ a
 
 .main-slider
   background-image: url('../img/slider-bgc.jpg')
+  &-cont
+    +w(100%)
+    margin-bottom: 0!important
   &-dots
     +w(246px)
     margin: auto
@@ -91,15 +152,19 @@ a
     right: 0
     left: 0
     bottom: 15px
-  &-dot
-    +wh(62px,6px)
-    background-color: #fff
+    li
+      +wh(62px,6px)
+      text-indent: -99999px
+      background-color: #fff
+      &.slick-active
+        background-color: #000
   &-slide
     position: relative
+    display: none
     &-cont
       position: relative
       z-index: 10
-      padding: 10px 20px 20px
+      padding: 10px 20px 37px
       div:first-child
         &>p
           +font(18px,$f_bold)
@@ -123,7 +188,7 @@ a
         +w(160px)
         margin: auto
         position: absolute
-        bottom: 70px
+        bottom: 90px
         right: 0
         left: 0
     &-bgc
@@ -150,6 +215,7 @@ a
     text-transform: uppercase
     letter-spacing: 2px
 .catalog
+  position: relative
   &-cont
     display: flex
     flex-direction: column
@@ -172,6 +238,9 @@ a
     &-photo
       +wh(100%,88px)
       overflow: hidden
+      img
+        min-width: 100%
+        min-height: 100%
     &-name
       display: flex
       align-items: center
@@ -212,9 +281,6 @@ a
   &-h3
     +font(50px,$f_bold)
     line-height: 50px
-  &-h4
-    +font(22px,$f_bold)
-    line-height: 22px
   &-h6
     +font(12px,$f_bold)
     line-height: 12px
@@ -229,23 +295,29 @@ a
       text-transform: uppercase
       letter-spacing: 1px
       color: #fff
-    &-white
-      background-color: rgba(255,255,255,0.5)
-      span
-        color: $headGray
-  &-bezh
+  &-bezh,&-pink
     background-color: #e7c6b5
     .stocks-h3
       color: #fff
+    .stocks-button
+      background-color: rgba(255,255,255,.5)
+      span
+        color: $headGray
   &-gray
     background-color: #292929
-    .stocks-h4,.stocks-h6
+    .stocks-h3,.stocks-h6
       color: #fff
+    .stocks-h3
+      font-size: 22px
+      line-height: 25px
   &-yellow
     background-color: #f3efe3
+    .stocks-h3
+      font-size: 22px
+      line-height: 25px
   &-pink
     background-color: #ca3970
-    .stocks-h3,.stocks-h6
+    .stocks-h6
       color: #fff
 
 .new
@@ -256,20 +328,6 @@ a
   &-units
     +w(295px)
     padding: 10px 0
-    .slick-arrow
-      +wh(14px)
-      display: block
-      border-top: 2px solid $headGray
-      border-right: 2px solid $headGray
-    .slick-next
-      transform: rotate(45deg)
-      right: -8px
-    .slick-prev
-      transform: rotate(-135deg)
-      left: -8px
-    .slick-next,.slick-prev
-      &:before
-        display: none
   &-slide
     +w(145px)
     margin: 0 3px
@@ -293,7 +351,96 @@ a
         align-items: center
         margin-top: 7px
 
+.about
+  position: relative
+  &:before,&:after
+    +wh(295px,1px)
+    display: table
+    content: ''
+    background-color: $headGray
+    margin: auto
+  &-cont
+    display: flex
+    align-items: center
+    flex-direction: column
+    max-height: 280px
+    overflow: hidden
+    transition: .7s ease
+  &-title
+    h3
+      text-align: center
+      span
+        +font(16px,$f_bold)
+        display: block
+  &-unit
+    margin-top: 10px
+  &-photo
+    +w(295px)
+    img
+      +w(100%)
+  &-sub-title
+    margin: 10px 0
+    h4
+      font-family: $f_bold
+  &-desc
+    p
+      font-family: $f_medium
+  &-padding
+    padding-bottom: 30px
+    margin: 10px 0
+  &-label
+    display: flex
+    align-items: center
+    width: 300px
+    margin: auto
+    position: absolute
+    bottom: 10px
+    left: 0
+    right: 0
+    span
+      font-family: $f_medium
+      color: $pink
+    svg
+      fill: $pink
+      transform: rotate(90deg)
+      transition: .35s ease
 
+.news
+  padding: 20px 0
+  &-title
+    +font(16px,$f_bold)
+    text-align: center
+    margin-bottom: 20px
+  &-slide
+    padding: 0 10px
+  &-data
+    +font(14px,$f_medium,#4a4f53)
+  &-sub-title
+    +font(18px,$f_bold,$pink)
+    margin: 10px 0
+  &-body
+    font-family: $f_medium
+
+
+
+
+
+
+.new-units,.news-slider
+  .slick-arrow
+    +wh(14px)
+    display: block
+    border-top: 2px solid $headGray
+    border-right: 2px solid $headGray
+  .slick-next
+    transform: rotate(45deg)
+    right: -8px
+  .slick-prev
+    transform: rotate(-135deg)
+    left: -8px
+  .slick-next,.slick-prev
+    &:before
+      display: none
 .pink
   color: $pink
 .foot
@@ -325,5 +472,14 @@ a
       text-decoration: underline
 #head-search:checked~form
   display: flex
-#mob-nav:checked~.mob-nav
-  display: flex
+#mob-nav:checked~.header .head-second
+  display: block
+#about:checked~.about-cont
+  max-height: 1000px
+#about:checked~.about-label
+  svg
+    transform: rotate(-90deg)
+#head-cat:checked~.header .head-cat
+  display: block
+#head-cat:checked~.header .mob-nav-but-cat
+  color: $pink
