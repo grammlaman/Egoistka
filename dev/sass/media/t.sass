@@ -45,6 +45,60 @@ header
       height: 70vh
       &>div
         flex: 0 0 50%
+  &-form
+    &-desc
+      p:first-child
+        margin-top: 50px
+      &-pass
+        +w(100%)
+    form
+      +w(555px)
+      padding: 50px 100px
+      margin: auto
+    &-links
+      +w(100%)
+      display: flex
+      align-items: center
+      justify-content: space-between
+    &-submit
+      +w(225px)
+      margin: 35px auto 0
+    &-input-cont
+      flex: 0 0 294px
+      &-reg
+        display: flex
+        justify-content: space-between
+        flex-wrap: wrap
+        button,label
+          +w(292px)
+    &-reg-accept
+      margin-top: 50px
+      margin-bottom: 20px
+    &-offer
+      label
+        display: none
+      &-cont
+        overflow: scroll
+        padding: 0 20px
+        margin-bottom: 20px
+    &-cont
+      +w(707px)
+      margin: auto
+    &-capcha
+      span
+        margin-bottom: 10px
+      input
+        flex: 0 0 164px
+      img
+        flex: 0 0 186px
+        width: 186px
+  &-reg
+    form
+      +w(750px)
+      padding: 50px 70px
+  &-call
+    .head-form-input-cont
+      flex: 0
 .mob
   &-none
     display: inherit!important
@@ -173,17 +227,26 @@ header
 
 
 
-
+.form-close
+  left: inherit
+  padding: 10px
+  right: 20px
 .tab-none
   display: none!important
 .foot
   padding-top: 40px
   a
     margin-top: 0
-  svg
-    fill: $pink
+  &-soc
+    svg
+      +w(32px)
+      fill: $pink
+    &:first-child
+      svg
+        +w(40px)
   &-row
     justify-content: space-between
+    align-items: center
   &-block
     display: flex
     flex-direction: column

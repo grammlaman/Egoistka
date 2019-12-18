@@ -1,6 +1,14 @@
 header
 	input(type='checkbox' style='display:none')#mob-nav
 	input(type='checkbox' style='display:none')#head-cat
+	input(type='radio' name='head-log' style='display:none')#head-log
+	input(type='radio' name='head-log' style='display:none')#head-pass
+	input(type='radio' name='head-log' style='display:none')#head-reg
+	input(type='radio' name='head-log' style='display:none')#head-call
+	input(type='radio' name='head-offer' style='display:none')#head-offer
+	input(type='radio' name='head-offer' style='display:none')#head-offer-ok
+	input(type='radio' name='head-offer' style='display:none')#head-offer-no
+	input(type='radio' name='head-log' style='display:none')#head-log-close
 	.header#header
 		.head
 			.section
@@ -13,11 +21,11 @@ header
 							path(d="M3 18h18v-2H3v2zm0-5h18v-2H3v2zm0-7v2h18V6H3z")
 					a(href='#').head-logo
 						+img('logo.png')
-					button.head-phone.mob-none.head-hover-pink
+					label(for='head-call').head-phone.mob-none.head-hover-pink
 						svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24")
 							path(d="M15 12h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3zm4 0h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm1 3.5c-1.25 0-2.45-.2-3.57-.57-.1-.03-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM5.03 5h1.5c.07.88.22 1.75.45 2.58l-1.2 1.21c-.4-1.21-.66-2.47-.75-3.79zM19 18.97c-1.32-.09-2.6-.35-3.8-.76l1.2-1.2c.85.24 1.72.39 2.6.45v1.51z")
 						span Заказать звонок
-					button.head-login.mob-none.head-hover-pink
+					label(for='head-log').head-login.mob-none.head-hover-pink
 						svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24")
 							path(d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z")
 						span Войти
@@ -35,17 +43,17 @@ header
 						svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24")
 							path(d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z")
 					label(for='head-cat').mob-nav-but.mob-nav-but-cat Каталог
-						span
+						span.mob-nav-but-span
 					a(href='#').mob-nav-but Примерочная
-						span
+						span.mob-nav-but-span
 					a(href='#').mob-nav-but Оплата и доставка
-						span
+						span.mob-nav-but-span
 					a(href='#').mob-nav-but Акции
-						span
+						span.mob-nav-but-span
 					a(href='#').mob-nav-but Контакты
-						span
+						span.mob-nav-but-span
 					a(href='#').mob-nav-but Блог
-						span
+						span.mob-nav-but-span
 					.head-search
 						input(type='checkbox' style='display:none')#head-search
 						label(for='head-search').mob-nav-but Поиск
@@ -54,11 +62,11 @@ header
 							button
 								svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24")
 									path(d="M15.5 14h-.79l-.28-.27C15.41 12.59 16 11.11 16 9.5 16 5.91 13.09 3 9.5 3S3 5.91 3 9.5 5.91 16 9.5 16c1.61 0 3.09-.59 4.23-1.57l.27.28v.79l5 4.99L20.49 19l-4.99-5zm-6 0C7.01 14 5 11.99 5 9.5S7.01 5 9.5 5 14 7.01 14 9.5 11.99 14 9.5 14z")
-					button.mob-nav-but.mob-nav-button
+					label(for='head-log').mob-nav-but.mob-nav-button
 						svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24")
 							path(d="M12 5.9c1.16 0 2.1.94 2.1 2.1s-.94 2.1-2.1 2.1S9.9 9.16 9.9 8s.94-2.1 2.1-2.1m0 9c2.97 0 6.1 1.46 6.1 2.1v1.1H5.9V17c0-.64 3.13-2.1 6.1-2.1M12 4C9.79 4 8 5.79 8 8s1.79 4 4 4 4-1.79 4-4-1.79-4-4-4zm0 9c-2.67 0-8 1.34-8 4v3h16v-3c0-2.66-5.33-4-8-4z")
 						span Войти
-					button.mob-nav-but.mob-nav-button.mob-nav-last
+					label(for='head-call').mob-nav-but.mob-nav-button.mob-nav-last
 						svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24")
 							path(d="M15 12h2c0-2.76-2.24-5-5-5v2c1.66 0 3 1.34 3 3zm4 0h2c0-4.97-4.03-9-9-9v2c3.87 0 7 3.13 7 7zm1 3.5c-1.25 0-2.45-.2-3.57-.57-.1-.03-.21-.05-.31-.05-.26 0-.51.1-.71.29l-2.2 2.2c-2.83-1.44-5.15-3.75-6.59-6.59l2.2-2.21c.28-.26.36-.65.25-1C8.7 6.45 8.5 5.25 8.5 4c0-.55-.45-1-1-1H4c-.55 0-1 .45-1 1 0 9.39 7.61 17 17 17 .55 0 1-.45 1-1v-3.5c0-.55-.45-1-1-1zM5.03 5h1.5c.07.88.22 1.75.45 2.58l-1.2 1.21c-.4-1.21-.66-2.47-.75-3.79zM19 18.97c-1.32-.09-2.6-.35-3.8-.76l1.2-1.2c.85.24 1.72.39 2.6.45v1.51z")
 						span Заказать звонок
@@ -73,3 +81,120 @@ header
 						- catTitle = "Эксклюзивное нижнее белье:"
 						- belie = exls
 						include ../parts/headBases
+		.head-log.head-form
+			.section
+				form
+					label(for='head-log-close').form-close
+						include ../../img/close-24px.svg
+					.head-form-title
+						h3 Вход в аккаунт
+					input(type='text' placeholder='Логин')
+					input(type='password' placeholder='Пароль')
+					.head-form-links
+						label(for='head-pass').head-form-a Забыли пароль?
+						label(for='head-reg').head-form-a Регистрация
+					button.head-form-submit.button-hover
+						span Войти
+						span
+		.head-form.head-pass
+			.section
+				form
+					label(for='head-log-close').form-close
+						include ../../img/close-24px.svg
+					.head-form-title
+						h3 Восстановление пароля
+					.head-form-desc
+						p Если вы забыли пароль, введите логин или E-Mail.
+						p Контрольная строка для смены пароля, а также ваши регистрационные данные, будут высланы вам по E-Mail.
+					input(type='text' placeholder='Логин')
+					span.head-form-span или
+					input(type='text' placeholder='Email')
+					label(for='head-log').head-form-a Я вспомнил пароль
+					button.head-form-submit.button-hover
+						span Войти
+						span
+		.head-form.head-reg
+			.section
+				form
+					label(for='head-log-close').form-close
+						include ../../img/close-24px.svg
+					.head-form-title
+						h3 Регистрация
+					.head-form-input-cont-reg
+						.head-form-input-cont
+							span Логин (мин. 3 символа)
+							span *
+							input(type='text')
+						.head-form-input-cont
+							span Email
+							span *
+							input(type='text')
+						.head-form-input-cont
+							span Пароль
+							span *
+							input(type='password')
+						.head-form-input-cont
+							span Подтвердите пароль
+							span *
+							input(type='password')
+					.head-form-desc-pass
+						span Пароль должен быть не менее 6 символов длиной.
+					.head-form-reg-accept
+						input(type='checkbox' style='display:none')#head-form-reg
+						label(for='head-offer')
+							include ../../img/check_box_outline_blank-24px.svg
+							include ../../img/check_box-24px.svg
+							span Я ознакомлен(а) с настоящим #[span соглашением] и согласен(на) со всеми его пунктами.
+					.head-form-input-cont-reg
+						button.head-form-submit.button-hover
+							span Зарегистрироваться
+							span
+						label(for='head-log').head-form-submit.head-form-button.button-hover
+							span Войти
+							span
+		.head-form.head-offer
+			.section
+				.head-form-cont
+					label(for='head-log-close').form-close
+						include ../../img/close-24px.svg
+					.head-form-title
+						h3 Согласие на обработку персональных данных
+					.head-form-offer
+						input(type='checkbox' style='display:none')#head-form-offer
+						.head-form-offer-cont
+							span Согласие на обработку персональных данныхНастоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП Иванов (ОГРНИП 123456, ИНН 7890), зарегистрированным в соответствии с законодательством РФ по адресу: 101000, г. Москва, 1-ый Котляковский пер., д. 2 (далее по тексту - Оператор). Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой Согласие на обработку персональных данныхНастоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП Иванов (ОГРНИП 123456, ИНН 7890), зарегистрированным в соответствии с законодательством РФ по адресу: 101000, г. Москва, 1-ый Котляковский пер., д. 2 (далее по тексту - Оператор). Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой Согласие на обработку персональных данныхНастоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП Иванов (ОГРНИП 123456, ИНН 7890), зарегистрированным в соответствии с законодательством РФ по адресу: 101000, г. Москва, 1-ый Котляковский пер., д. 2 (далее по тексту - Оператор). Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой Согласие на обработку персональных данныхНастоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП Иванов (ОГРНИП 123456, ИНН 7890), зарегистрированным в соответствии с законодательством РФ по адресу: 101000, г. Москва, 1-ый Котляковский пер., д. 2 (далее по тексту - Оператор). Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой
+						label(for='head-form-offer')
+							span Развернуть
+							span Свернуть
+							include ../../img/keyboard_arrow_right-24px.svg
+					.head-form-input-cont-reg
+						label(for='head-offer-ok').head-form-submit.button-hover
+							span Принимаю
+							span
+						label(for='head-offer-no').head-form-submit.head-form-button.button-hover
+							span Не принимаю
+							span
+		.head-call.head-form
+			.section
+				form
+					label(for='head-log-close').form-close
+						include ../../img/close-24px.svg
+					.head-form-title
+						h3 Заказать звонок
+					.head-form-input-cont
+						span Ваше имя
+						span *
+						input(type='text')
+					.head-form-input-cont
+						span Номер телефона
+						span *
+						input(type='tel')
+					.head-form-capcha
+						span Защита от автоматических сообщений
+						input(type='text')
+						+img('capcha.jpg')
+					button.head-form-submit.button-hover
+						span Отправить
+						span
+
+
