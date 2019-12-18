@@ -50,6 +50,9 @@ header
           fill: $pink
         &,span
           text-decoration: underline
+  &-form
+    label:hover
+      text-decoration: underline
 .mob
   &-nav
     &-but
@@ -163,6 +166,8 @@ header
     position: relative
     z-index: 50
   &:hover
+    &,span,label
+      text-decoration: none!important
     span:first-child
       color: $headGray
     span:last-child
