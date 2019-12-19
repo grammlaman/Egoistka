@@ -1,0 +1,21 @@
+extends template/main
+append vars
+  -
+    page_title= 'Главная страница'
+block content
+  main
+    .section
+      .bread-crumps
+        a(href='#') Главная
+        div
+        a(href='#') Эксклюзивное нижнее белье
+        div
+        a(href='#') Грудь среднего размера
+      .bread-crumps-mob
+        div
+        a(href='#') Назад
+        div
+        a(href='#') Грудь среднего размера
+    .stocks
+      .section.catalog-cont.catalog-cont-page
+        include parts/stock

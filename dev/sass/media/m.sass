@@ -385,11 +385,15 @@ a
     display: flex
     flex-direction: column
     align-items: center
+    &-page
+      align-items: flex-start
   &-title
     display: flex
     align-items: center
     font-family: $f_bold
     text-transform: uppercase
+    &-page
+      font-family: $f_bold
     svg
       +w(24px)
       margin-right: 10px
@@ -497,6 +501,34 @@ a
     +w(145px)
     margin: 0 3px
     display: none
+    &-stock,&-sell,&-sell-stock
+      position: relative
+      .cat-stock,.cat-sell
+        position: absolute
+        right: 5px
+        top: 5px
+        svg
+            fill: $pink
+    &-stock
+      .cat-stock
+        display: block
+    &-sell
+      .cat-sell
+        display: block
+      svg
+        +wh(20px)
+    &-sell-stock
+      .cat-sell-stock
+        position: absolute
+        display: flex
+        align-items: center
+        right: 5px
+        top: 5px
+      .cat-stock,.cat-sell
+        position: static
+        display: block
+        svg
+          +wh(20px)
   &-photo
     +wh(100%,190px)
     overflow: hidden
@@ -592,6 +624,8 @@ a
     .new-slide
       display: block
       margin: 0 2.5px 5px
+  &-sell,&-stock
+    display: none
 
 .sort
   margin-bottom: 10px
