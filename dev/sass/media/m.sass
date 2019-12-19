@@ -217,6 +217,35 @@ a
       img
         flex: 0 0 127px
         +wh(127px,46px)
+  &-buy
+    &-desc
+      margin-top: 20px
+      span:first-child
+        font-family: $f_bold
+        margin-right: 5px
+      span:last-child
+        text-transform: uppercase
+.bread-crumps,.bread-crumps-mob
+  display: flex
+  align-items: center
+  flex-wrap: wrap
+  margin: 10px 0
+  a
+    font-size: 12px
+    color: #e7c6b5
+    &:last-child
+      color: $headGray
+  div
+    +wh(7px)
+    margin: 0 10px
+    transform: rotate(45deg)
+    border-right: 1px solid $headGray
+    border-top: 1px solid $headGray
+    &:first-child
+      transform: rotate(-135deg)
+      border-color: #e7c6b5
+.bread-crumps
+  display: none
 .form-close
   position: absolute
   left: 20px
@@ -349,6 +378,9 @@ a
     letter-spacing: 2px
 .catalog
   position: relative
+  &-close
+    left: inherit
+    right: 20px
   &-cont
     display: flex
     flex-direction: column
@@ -483,7 +515,6 @@ a
       &:last-child
         align-items: center
         margin-top: 7px
-
 .about
   position: relative
   &:before,&:after
@@ -551,7 +582,179 @@ a
     +font(18px,$f_bold,$pink)
     margin: 10px 0
 
+.cat
+  &-title
+    text-transform: none
+  &-cont
+    display: flex
+    flex-wrap: wrap
+    padding: 10px 0
+    .new-slide
+      display: block
+      margin: 0 2.5px 5px
 
+.sort
+  margin-bottom: 10px
+  display: none
+  align-items: flex-start
+  justify-content: space-between
+  &-title
+    font-family: $f_bold
+  &-list
+    +w(200px)
+    height: 30px
+    overflow: hidden
+    border-bottom: 1px solid $headGray
+    background-color: #fff
+    padding: 10px 10px 0
+    margin-top: -9px
+    position: relative
+    display: flex
+    flex-direction: column
+    align-items: flex-start
+    transition: .35s ease
+    button
+      +w(100%)
+      margin-bottom: 5px
+      text-align: left
+      position: relative
+      z-index: 10
+    svg
+      position: absolute
+      right: 0
+      top: 7px
+      transition: .35s ease
+      transform: rotate(90deg)
+    &-open
+      height: 75px
+      svg
+        transform: rotate(270deg)
+  &-negative
+    order: 1
+  &-activ
+    order: 0
+.pagination
+  display: none
+  align-items: center
+  justify-content: space-between
+  margin-bottom: 10px
+  &-bottom
+    display: none
+  button
+    +wh(20px)
+    +dfc
+    border-bottom: 3px solid transparent
+    span
+      color: $pink
+    svg
+      flex: 0 0 20px
+      margin-top: -2px
+    &:first-child,&:nth-child(2)
+      svg
+        transform: rotate(180deg)
+    &:last-child,&:first-child
+      svg:first-child
+        margin-right: -7px
+      svg:last-child
+        margin-left: -7px
+  &-activ
+    border-color: $headGray!important
+    span
+      color: $headGray!important
+aside
+  +w(300px)
+  margin: auto
+.filter
+  display: none
+  +w(100%)
+  padding: 50px 50px 20px 40px
+  background-color: #eef2f5
+  position: relative
+  &-clear
+    display: flex
+    align-items: center
+    right: 20px
+    top: 15px
+    &-bottom
+      display: none
+      top: inherit
+      bottom: 15px
+    svg
+      +wh(16px)
+    span
+      color: $pink
+  &-close
+    top: 10px
+    left: 30px
+  &-close,&-clear
+    position: absolute
+    svg
+      fill: $pink
+  &-cont
+    margin-bottom: 15px
+  &-title
+    +font(12px,$f_bold)
+    margin-bottom: 10px
+  &-price
+    &-slider
+      display: flex
+      justify-content: space-between
+      label
+        display: none
+      input
+        +w(50px)
+        padding-bottom: 5px
+        border: none
+        border-bottom: 1px solid $headGray
+        background: inherit
+      &-row
+        margin: 10px 0
+        border: none!important
+        &>span
+          border-radius: 100%
+          border: none!important
+          background: $pink!important
+        &>div
+          top: 1.5px!important
+          height: 60%!important
+  &-label
+    margin-bottom: 4px
+    label
+      display: flex
+      align-items: center
+    svg
+      margin-right: 5px
+      fill: $pink
+      &:nth-child(3)
+        display: none
+    input:checked~svg
+      &:nth-child(2)
+        display: none
+      &:nth-child(3)
+        display: block
+  &-button
+    +wh(225px,44px)
+    +dfc
+    border: 1px solid $headGray
+    background-color: $pink
+    color: #fff
+  &-hidden
+    display: flex
+    align-items: center
+    justify-content: space-between
+    margin-bottom: 10px
+    label
+      +dfc
+      height: 44px
+      background-color: #eef2f5
+      color: $pink
+      &:first-child
+        flex: 0 0 220px
+      &:last-child
+        flex: 0 0 70px
+        svg
+          +w(20px)
+          fill: $pink
 
 
 
@@ -577,7 +780,7 @@ a
   padding-bottom: 30px
   button
     +font(14px,$f_reg)
-  a
+  a,label
     margin-top: 20px
   span
     color: #fff
@@ -587,7 +790,7 @@ a
   &-block
     margin-right: 30px
   &-bold
-    a
+    a,label
       +font(14px,$f_bold,#fff)
       display: block
   &-tel
@@ -623,6 +826,8 @@ a
   display: block
 #head-call:checked~.header .head-call
   display: block
+#head-buy:checked~.header .head-buy
+  display: block
 #head-offer-ok:checked~.header .head-reg .section form .head-form-reg-accept label
   svg:first-child
     display: none
@@ -639,3 +844,8 @@ a
   span:first-child
     visibility: hidden
     opacity: 0
+#aside:checked~.filter
+  display: block
+#pagination
+  &:checked~.sort-row .sort,&:checked~.sort-row .pagination
+    display: flex

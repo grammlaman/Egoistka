@@ -96,7 +96,7 @@ header
     form
       +w(750px)
       padding: 50px 70px
-  &-call
+  &-call,&-buy
     .head-form-input-cont
       flex: 0
 .mob
@@ -172,6 +172,10 @@ header
       height: 110px
     &-name
       margin-top: 3px
+  &-page
+    display: flex
+    align-items: flex-start
+    margin-top: 20px
 .stocks
   &-unit
     +wh(369px,183px)
@@ -218,6 +222,48 @@ header
       .about-photo
         order: 10
 
+.sort
+  display: flex
+.pagination
+  &-bottom
+    +w(285px)
+    display: flex
+    margin-left: auto
+    margin-right: 20px
+    margin-bottom: 30px
+.sort
+  flex: 0 0 280px
+  &-row
+    +w(483px)
+    display: flex
+    justify-content: space-between
+    align-items: flex-start
+    position: absolute
+    left: 265px
+    top: 40px
+  &-list
+    +w(190px)
+.cat-cont
+  margin-top: 50px
+  .new-slide
+    margin: 0 15px 15px 0
+aside
+  +w(250px)
+  margin: 0 15px 0 0
+  position: relative
+.filter
+  display: block
+  padding: 50px 20px 50px
+  &-hidden
+    display: none
+  &-close
+    display: none
+  &-clear
+    left: 0
+    right: 0
+    margin: auto
+    &-bottom
+      display: flex
 
 
 
@@ -226,7 +272,11 @@ header
 
 
 
-
+.bread-crumps
+  display: flex
+  margin-left: 10px
+  &-mob
+    display: none
 .form-close
   left: inherit
   padding: 10px
@@ -235,7 +285,7 @@ header
   display: none!important
 .foot
   padding-top: 40px
-  a
+  a,label
     margin-top: 0
   &-soc
     svg

@@ -1,14 +1,15 @@
 header
-	input(type='checkbox' style='display:none')#mob-nav
-	input(type='checkbox' style='display:none')#head-cat
+	input(type='radio' name='head-log' style='display:none')#mob-nav
+	input(type='radio' name='head-log' style='display:none')#head-cat
 	input(type='radio' name='head-log' style='display:none')#head-log
 	input(type='radio' name='head-log' style='display:none')#head-pass
 	input(type='radio' name='head-log' style='display:none')#head-reg
 	input(type='radio' name='head-log' style='display:none')#head-call
+	input(type='radio' name='head-log' style='display:none')#head-buy
+	input(type='radio' name='head-log' style='display:none')#head-log-close
 	input(type='radio' name='head-offer' style='display:none')#head-offer
 	input(type='radio' name='head-offer' style='display:none')#head-offer-ok
 	input(type='radio' name='head-offer' style='display:none')#head-offer-no
-	input(type='radio' name='head-log' style='display:none')#head-log-close
 	.header#header
 		.head
 			.section
@@ -39,7 +40,7 @@ header
 		.head-second
 			.section
 				nav.mob-nav
-					label(for='mob-nav').mob-nav-close
+					label(for='head-log-close').mob-nav-close
 						svg(xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24")
 							path(d="M19 6.41L17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z")
 					label(for='head-cat').mob-nav-but.mob-nav-but-cat Каталог
@@ -73,6 +74,8 @@ header
 		.head-cat
 			.section
 				.head-cat-basis
+					label(for='head-log-close').form-close.catalog-close
+						include ../../img/close-24px.svg
 					div
 						- catTitle = "Базовое нижнее белье:"
 						- belie = bases
@@ -179,6 +182,31 @@ header
 						include ../../img/close-24px.svg
 					.head-form-title
 						h3 Заказать звонок
+					.head-form-input-cont
+						span Ваше имя
+						span *
+						input(type='text')
+					.head-form-input-cont
+						span Номер телефона
+						span *
+						input(type='tel')
+					.head-form-capcha
+						span Защита от автоматических сообщений
+						input(type='text')
+						+img('capcha.jpg')
+					button.head-form-submit.button-hover
+						span Отправить
+						span
+		.head-buy.head-form
+			.section
+				form
+					label(for='head-log-close').form-close
+						include ../../img/close-24px.svg
+					.head-form-title
+						h3 Купить в один клик
+					.head-buy-desc
+						span Товар:
+						span Дефиле бюстгалтер push-up
 					.head-form-input-cont
 						span Ваше имя
 						span *

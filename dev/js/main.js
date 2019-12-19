@@ -62,14 +62,45 @@ $(function(){
         ]
     });
 
+    let slider = $("#slider-range" ).slider({
+        range: true,
+        min: 0,
+        max: 50000,
+        values: [1500, 37000],
+        slide: function( event, ui ) {
+            $("#amount" ).val(ui.values[ 0 ]);
+            $("#amount-1" ).val(ui.values[ 1 ]);
+        }
+    });
+    $( "#amount" ).on( "change", function() {
+        let arr = slider.slider( "option", "values" );
+        let pos = parseInt($(this).val());
+        slider.slider( "values", [pos,arr[1]] );
+    });
+    $( "#amount-1" ).on( "change", function() {
+        let arr = slider.slider( "option", "values" );
+        let pos = parseInt($(this).val());
+        slider.slider( "values", [arr[0],pos] );
+    });
+    $("#amount").val( $( "#slider-range" ).slider("values", 0));
+    $("#amount-1").val( $( "#slider-range" ).slider("values", 1));
 
-
-
-
-
-
-
-
+    let sortArr = document.querySelectorAll('.sort-negative');
+    let sortBut = document.querySelector('.sort-list');
+    sortArr.forEach(function (el) {
+        el.onclick = function () {
+            if(!sortBut.classList.contains('sort-list-open')){
+                sortBut.classList.add('sort-list-open');
+            }
+            else {
+                sortBut.classList.remove('sort-list-open');
+            }
+            sortArr.forEach(function (elem) {
+                elem.classList.remove('sort-activ')
+            })
+            el.classList.add('sort-activ')
+        }
+    })
 
 
 
