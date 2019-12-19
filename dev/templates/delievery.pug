@@ -1,0 +1,55 @@
+extends template/main
+append vars
+  -
+    page_title= 'Главная страница'
+block content
+  main
+    .section
+      .bread-crumps
+        a(href='#') Главная
+        div
+        a(href='#') Оплата и доставка
+      .bread-crumps-mob
+        div
+        a(href='#') Назад
+        div
+        a(href='#') Оплата и доставка
+    .delievery
+      .section.delievery-cont
+        .catalog-title.catalog-title-page
+          h3 Оплата и доставка:
+        .delievery-label-cont
+          .delievery-label.delievery-label-first
+            .delievery-title
+              include ../img/person_pin-24px.svg
+              span Доставка курьером
+            .delievery-p.delievery-p-first
+              p Доставим курьером по#[br]Москве и Московской области
+            .delievery-row
+              div
+                include ../img/account_balance_wallet-24px.svg
+                .delievery-title
+                  span Оплата курьеру
+          .delievery-label.delievery-label-second
+            .delievery-title
+              include ../img/local_shipping-24px.svg
+              span Транспортная компания
+            .delievery-p
+              p Доставка транс компаниями в регины РФ
+              p На ваш выбор любая из ТК России.
+              p Оперативная доставка до транспортной
+              p компании нашим транспортом.
+              p &nbsp;
+              p Точная отправка в срок.
+            .delievery-row
+              div
+                include ../img/account_balance_wallet-24px.svg
+                .delievery-title
+                  span Оплата курьеру
+              div
+                include ../img/card_membership-24px.svg
+                .delievery-title
+                  span Наложенным платежом
+        .delievery-desc
+          p Осуществляется по факту 100% предоплаты на расчетный счет компании.Счет выставляется в индивидуальном порядке с учетом  стоимости доставки в страну заказчика. Сроки доставки разнятся, но не превышают 14 дней с момента оплаты. Для формирования заказа и выставления счета свяжитесь, пожалуйста, с офисом.
+          p Осуществляется по факту 100% предоплаты на расчетный счет компании.Счет выставляется в индивидуальном порядке с учетом  стоимости доставки в страну заказчика. Сроки доставки разнятся, но не превышают 14 дней с момента оплаты. Для формирования заказа и выставления счета свяжитесь, пожалуйста, с офисом.

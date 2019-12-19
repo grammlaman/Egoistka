@@ -790,7 +790,40 @@ aside
           +w(20px)
           fill: $pink
 
-
+.delievery
+  svg
+    +w(40px)
+    fill: $pink
+    margin-bottom: 10px
+  &-label
+    display: flex
+    flex-direction: column
+    align-items: center
+    justify-content: space-between
+    padding: 10px 0
+    margin-top: 10px
+    background-color: #f3efe3
+    &>div
+      margin-bottom: 20px
+  &-title
+    display: flex
+    flex-direction: column
+    align-items: center
+    span
+      +font(16px,$f_bold)
+  &-p
+    p
+      text-align: center
+  &-row
+    div
+      display: flex
+      flex-direction: column
+      align-items: center
+      margin-bottom: 10px
+  &-desc
+    padding-bottom: 20px
+    p
+      margin-top: 10px
 
 
 .new-units,.news-slider
