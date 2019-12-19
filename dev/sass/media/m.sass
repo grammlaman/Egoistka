@@ -825,7 +825,28 @@ aside
     p
       margin-top: 10px
 
-
+.cont
+  &-ul
+    li
+      p
+        margin: 10px 0
+        span
+          display: block
+    .foot-row
+      +w(170px)
+      justify-content: space-between
+      margin: 10px 0
+      svg
+        +w(40px)
+        fill: $pink
+  &-form
+    padding-bottom: 100px
+    input,textarea
+      +w(100%)
+      padding-bottom: 5px
+      border: none
+      border-bottom: 1px solid $headGray
+      display: block
 .new-units,.news-slider
   .slick-arrow
     +wh(14px)
