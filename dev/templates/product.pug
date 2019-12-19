@@ -1,0 +1,162 @@
+extends template/main
+append vars
+  -
+    page_title= 'Главная страница'
+block content
+  .section
+    .bread-crumps
+      a(href='#') Главная
+      div
+      a(href='#') Эксклюзивное нижнее белье
+      div
+      a(href='#') Грудь среднего размера
+    .bread-crumps-mob
+      div
+      a(href='#') Назад
+      div
+      a(href='#') Грудь среднего размера
+  .section.catalog-page
+    aside
+      input(type='checkbox' style='display:none')#aside
+      input(type='checkbox' style='display:none')#pagination
+      .filter-hidden
+        label(for='aside') Фильтр
+        label(for='pagination')
+          include ../img/menu.svg
+      .sort-row
+        .sort
+          .sort-title
+            span Сортировка:
+          .sort-list
+            include ../img/keyboard_arrow_right-24px.svg
+            button.sort-negative.sort-activ По популярности
+            button.sort-negative По возрастанию цены
+            button.sort-negative По убыванию цены
+        .pagination
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+            include ../img/keyboard_arrow_right-24px.svg
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+          button.pagination-activ
+            span 1
+          button
+            span 2
+          button
+            span 3
+          button
+            span 4
+          button
+            span 5
+          button
+            span 6
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+            include ../img/keyboard_arrow_right-24px.svg
+      .filter
+        .filter-row
+          label(for='aside').filter-close
+            include ../img/close-24px.svg
+          button.filter-clear
+            include ../img/close-24px.svg
+            span Очистить фильтр
+        .filter-cont
+          h6.filter-title Стоимость:
+          div#slider-range.filter-price-slider-row
+          p.filter-price-slider
+            label(for="amount")
+            input(type="text")#amount
+            input(type="text")#amount-1
+        .filter-cont
+          .filter-label
+            label
+              input(type='checkbox' style='display:none')
+              include ../img/check_box_outline_blank-24px.svg
+              include ../img/check_box-24px.svg
+              span Новинки
+          div.filter-label
+            label
+              input(type='checkbox' style='display:none')
+              include ../img/check_box_outline_blank-24px.svg
+              include ../img/check_box-24px.svg
+              span Акции
+        .filter-cont
+          h6.filter-title Размеры:
+          -for(let i=0;i<=5;i++)
+            .filter-label
+              label
+                input(type='checkbox' style='display:none')
+                include ../img/check_box_outline_blank-24px.svg
+                include ../img/check_box-24px.svg
+                span 42
+        .filter-cont
+          h6.filter-title Бренды:
+          -for(let i=0;i<=7;i++)
+            .filter-label
+              label
+                input(type='checkbox' style='display:none')
+                include ../img/check_box_outline_blank-24px.svg
+                include ../img/check_box-24px.svg
+                span Antinea
+        .filter-cont
+          h6.filter-title Цвет:
+          -for(let i=0;i<=9;i++)
+            .filter-label
+              label
+                input(type='checkbox' style='display:none')
+                include ../img/check_box_outline_blank-24px.svg
+                include ../img/check_box-24px.svg
+                span ванильный
+        button.filter-button.button-hover
+          span Показать
+          span
+        button.filter-clear.filter-clear-bottom
+          include ../img/close-24px.svg
+          span Очистить фильтр
+    main.new
+      .catalog-title.cat-title
+        h3 Грудь среднего размера:
+      .cat-cont
+        -for(let i=1;i<=12;i++)
+          .new-slide
+            .new-unit
+              .new-photo
+                +img('new01.jpg')
+              .new-desc
+                .new-desc-row
+                  span Бюстгальтер №1340 Sielei new мягкий
+                  button
+                    include ../img/favorite_border-24px.svg
+                .new-desc-row
+                  span 5300 ₽
+                  button
+                    include ../img/add_shopping_cart-24px.svg
+      .pagination.pagination-bottom
+        button
+          include ../img/keyboard_arrow_right-24px.svg
+          include ../img/keyboard_arrow_right-24px.svg
+        button
+          include ../img/keyboard_arrow_right-24px.svg
+        button.pagination-activ
+          span 1
+        button
+          span 2
+        button
+          span 3
+        button
+          span 4
+        button
+          span 5
+        button
+          span 6
+        button
+          include ../img/keyboard_arrow_right-24px.svg
+        button
+          include ../img/keyboard_arrow_right-24px.svg
+          include ../img/keyboard_arrow_right-24px.svg
+
+
+
+
