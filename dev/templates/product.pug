@@ -1,7 +1,7 @@
 extends template/main
 append vars
   -
-    page_title= 'Главная страница'
+    page_title= 'Бюстгальтер №1340 Sielei new мягкий'
 block content
   .section
     .bread-crumps
@@ -10,120 +10,115 @@ block content
       a(href='#') Эксклюзивное нижнее белье
       div
       a(href='#') Грудь среднего размера
+      div
+      a(href='#') Бюстгальтер №1340 Sielei new мягкий
     .bread-crumps-mob
       div
       a(href='#') Назад
       div
-      a(href='#') Грудь среднего размера
-  .section.catalog-page
-    aside
-      input(type='checkbox' style='display:none')#aside
-      input(type='checkbox' style='display:none')#pagination
-      .filter-hidden
-        label(for='aside') Фильтр
-        label(for='pagination')
-          include ../img/menu.svg
-      .sort-row
-        .sort
-          .sort-title
-            span Сортировка:
-          .sort-list
+      a(href='#') Бюстгальтер №1340 Sielei new мягкий
+  input(type='checkbox' style='display:none')#prod-deliv
+  input(type='checkbox' style='display:none')#prod-buy
+  .product
+    .section
+      .product-cont
+        .blog-title
+          h2 Бюстгальтер №1340 Sielei new мягкий
+        .product-slider
+          .product-slider-main
+            - for(let i=1;i<6;i++)
+              .product-slider-main-slide
+                +img('prod.jpg')
+          .product-slider-slave
+            - for(let i=1;i<6;i++)
+              .product-slider-slave-slide
+                 +img('prod.jpg')
+        .product-desc
+          .product-price
+            span Цена:
+            span 3000 ₽
+            span 5300 ₽
+          .product-size
+            span Размеры:
+            a(href='http://work.grammla.kz/egoistka/size.html') Как правильно выбрать размер
+            .product-size-label
+              -for(i=0;i<6;i++)
+                label
+                  input(type='radio' name='product-size' style='display:none')
+                  include ../img/check_box-24px.svg
+                  include ../img/check_box_outline_blank-24px.svg
+                  span 42
+          button.button-hover.product-cart-button
+            span В корзину
+            include ../img/add_shopping_cart-24px.svg
+            span
+          .product-button-row
+            label(for='prod-buy').product-button-row-buy.product-cart-button.button-hover
+              span Купить в 1 клик
+              include ../img/add_shopping_cart-24px.svg
+              span
+            button.product-button-row-like.product-cart-button.button-hover
+              span В избранное
+              include ../img/favorite_border-24px.svg
+              span
+          input(type='radio' name='product-desc' style='display:none' checked)#prod-first
+          input(type='radio' name='product-desc' style='display:none')#prod-second
+          input(type='radio' name='product-desc' style='display:none')#prod-third
+          input(type='radio' name='product-desc' style='display:none')#prod-forth
+          label(for='prod-first').product-desc-label.product-desc-first-label
+            span Описание
             include ../img/keyboard_arrow_right-24px.svg
-            button.sort-negative.sort-activ По популярности
-            button.sort-negative По возрастанию цены
-            button.sort-negative По убыванию цены
-        .pagination
-          button
+          .product-desc-first
+            span Цвет:
+            span черный
+            span Артикул:
+            span 5214982
+            span Страна дизайна:
+            span США
+            span Страна производства:
+            span Италия
+            span Состав:
+            span Кожа натуральная 100%
+          label(for='prod-second').product-desc-label.product-desc-second-label
+            span Способ оплаты
             include ../img/keyboard_arrow_right-24px.svg
+          .product-desc-second
+            span - Наличными курьеру
+            span - Наложенный платеж
+          label(for='prod-third').product-desc-label.product-desc-third-label
+            span Доставка
             include ../img/keyboard_arrow_right-24px.svg
-          button
+          .product-desc-third
+            include ../img/local_shipping-24px.svg
+            div
+              p Доставка по Москве - 300 рублей
+              p до 10 км от МКАД - 500 рублей
+              p свыше 10 км от МКАД - #[label(for='prod-deliv') по тарифам]
+          label(for='prod-forth').product-desc-label.product-desc-forth-label
+            span Задать вопрос
             include ../img/keyboard_arrow_right-24px.svg
-          button.pagination-activ
-            span 1
-          button
-            span 2
-          button
-            span 3
-          button
-            span 4
-          button
-            span 5
-          button
-            span 6
-          button
-            include ../img/keyboard_arrow_right-24px.svg
-          button
-            include ../img/keyboard_arrow_right-24px.svg
-            include ../img/keyboard_arrow_right-24px.svg
-      .filter
-        .filter-row
-          label(for='aside').filter-close
-            include ../img/close-24px.svg
-          button.filter-clear
-            include ../img/close-24px.svg
-            span Очистить фильтр
-        .filter-cont
-          h6.filter-title Стоимость:
-          div#slider-range.filter-price-slider-row
-          p.filter-price-slider
-            label(for="amount")
-            input(type="text")#amount
-            input(type="text")#amount-1
-        .filter-cont
-          .filter-label
-            label
-              input(type='checkbox' style='display:none')
-              include ../img/check_box_outline_blank-24px.svg
-              include ../img/check_box-24px.svg
-              span Новинки
-          div.filter-label
-            label
-              input(type='checkbox' style='display:none')
-              include ../img/check_box_outline_blank-24px.svg
-              include ../img/check_box-24px.svg
-              span Акции
-        .filter-cont
-          h6.filter-title Размеры:
-          -for(let i=0;i<=5;i++)
-            .filter-label
-              label
-                input(type='checkbox' style='display:none')
-                include ../img/check_box_outline_blank-24px.svg
-                include ../img/check_box-24px.svg
-                span 42
-        .filter-cont
-          h6.filter-title Бренды:
-          -for(let i=0;i<=7;i++)
-            .filter-label
-              label
-                input(type='checkbox' style='display:none')
-                include ../img/check_box_outline_blank-24px.svg
-                include ../img/check_box-24px.svg
-                span Antinea
-        .filter-cont
-          h6.filter-title Цвет:
-          -for(let i=0;i<=9;i++)
-            .filter-label
-              label
-                input(type='checkbox' style='display:none')
-                include ../img/check_box_outline_blank-24px.svg
-                include ../img/check_box-24px.svg
-                span ванильный
-        button.filter-button.button-hover
-          span Показать
-          span
-        button.filter-clear.filter-clear-bottom
-          include ../img/close-24px.svg
-          span Очистить фильтр
-    main.new
-      .catalog-title.cat-title
-        h3 Грудь среднего размера:
-      .cat-cont
-        -for(let i=1;i<=12;i++)
+          form.product-desc-forth
+            div
+              span Ваше имя *
+              input(type='text')
+            div
+              span E-mail *
+              input(type='text')
+            span Сообщение
+            textarea
+            button.button-hover
+              span Отправить
+              span
+  .new
+    .section.new-cont
+      .catalog-title
+        h3 Похожие товары
+      .new-product
+        -for(let i=1;i<=4;i++)
           .new-slide
             .new-unit
               .new-photo
-                +img('new01.jpg')
+                +img('new0' + i + '.jpg')
               .new-desc
                 .new-desc-row
                   span Бюстгальтер №1340 Sielei new мягкий
@@ -133,30 +128,42 @@ block content
                   span 5300 ₽
                   button
                     include ../img/add_shopping_cart-24px.svg
-      .pagination.pagination-bottom
-        button
-          include ../img/keyboard_arrow_right-24px.svg
-          include ../img/keyboard_arrow_right-24px.svg
-        button
-          include ../img/keyboard_arrow_right-24px.svg
-        button.pagination-activ
-          span 1
-        button
-          span 2
-        button
-          span 3
-        button
-          span 4
-        button
-          span 5
-        button
-          span 6
-        button
-          include ../img/keyboard_arrow_right-24px.svg
-        button
-          include ../img/keyboard_arrow_right-24px.svg
-          include ../img/keyboard_arrow_right-24px.svg
-
-
-
-
+  .product-deliv-bgc
+    .product-deliv
+      label(for='prod-deliv').form-close
+        include ../img/close-24px.svg
+      div
+        span Расстояние
+        span Заказы от 50 000 Р
+        span Заказы от 100 000 Р
+      div
+        span в пределах МКАД
+        span 500 Р
+        span 0 Р
+      div
+        span до 5 км от МКАД
+        span 1000 Р
+        span 500 Р
+      div
+        span от 5 до 10 км от МКАД
+        span 1500 Р
+        span 1000 Р
+      div
+        span от 10 до 20 км от МКАД
+        span 2000 Р
+        span 1500 Р
+      div
+        include ../img/local_shipping-24px.svg
+        p Доставка заказов на более отдаленные расстояния, для которых не указаны расценки, осуществляетсяпо согласованию через транспортные компании
+    form.product-buy-form
+      label(for='prod-buy').form-close
+        include ../img/close-24px.svg
+      h3 Купить в 1 клик
+      span #[strong Товар:] ДЕФИЛЕ БЮСТГАЛЬТЕР PUSH-UP
+      span Ваше имя *
+      input(type='text')
+      span Номер телефона *
+      input(type='text')
+      button.button-hover
+        span Отправить
+        span

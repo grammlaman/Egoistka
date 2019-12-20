@@ -103,12 +103,45 @@ $(function(){
     })
     let calcBut = document.querySelector('.size-calc-button');
     let sizeRes = document.querySelector('.size-result');
-    calcBut.onclick = function (el) {
-        sizeRes.classList.add('size-result-show');
+    if(calcBut){
+        calcBut.onclick = function (el) {
+            sizeRes.classList.add('size-result-show');
+        }
     }
-
-
-
+    $('.product-slider-main').slick({
+        slidesToShow: 1,
+        slidesToScroll: 1,
+        dots: false,
+        mobileFirst: true,
+        asNavFor: '.product-slider-slave',
+        prevArrow: '<a href="#"><img src="../img/keyboard_arrow_right-24px.svg" alt=""></a>',
+        nextArrow: '<a href="#"><img src="../img/keyboard_arrow_right-24px.svg" alt=""></a>',
+        responsive: [
+            {
+                breakpoint: 700,
+                settings: {
+                    arrows: false
+                }
+            },
+            {
+                breakpoint: 300,
+                settings: {
+                    arrows: true
+                }
+            }
+        ]
+    });
+    $('.product-slider-slave').slick({
+        slidesToShow: 4,
+        slidesToScroll: 1,
+        asNavFor: '.product-slider-main',
+        mobileFirst: true,
+        dots: false,
+        arrows: true,
+        prevArrow: '<a href="#"><img src="../img/keyboard_arrow_right-24px.svg" alt=""></a>',
+        nextArrow: '<a href="#"><img src="../img/keyboard_arrow_right-24px.svg" alt=""></a>',
+        focusOnSelect: true,
+    });
 
 
 

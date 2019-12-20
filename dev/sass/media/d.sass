@@ -204,6 +204,46 @@ header
         +w(550px)
     button
       margin-top: -60px
+.product
+  &-cont
+    display: flex
+    align-items: flex-start
+    justify-content: space-between
+    position: relative
+    .blog-title
+      position: absolute
+      left: 585px
+      top: 20px
+  &-desc
+    margin: 50px auto 0
+    &-first
+      span
+        font-size: 14px
+        letter-spacing: 2px
+    &-third
+      align-items: center
+      svg
+        margin-right: 20px
+    &-forth
+      display: flex
+      flex-wrap: wrap
+      justify-content: space-between
+      margin-top: 20px
+      input
+        +w(270px)
+        display: block
+        flex: 0 0 270px
+  &-price
+    justify-content: flex-start
+  &-size
+    a
+      order: 0
+      flex: inherit
+      margin: 0 0 0 5px
+    &-label
+      margin-left: 0
+      margin-top: 10px
+
 .bread-crumps
   a:hover
     text-decoration: underline
