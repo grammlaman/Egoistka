@@ -847,6 +847,39 @@ aside
       border: none
       border-bottom: 1px solid $headGray
       display: block
+.blog
+  &-title
+    h2
+      font-family: $f_bold
+    &-sub
+      +font(14px,$f_bold,$pink)
+      margin-bottom: 20px
+  &-unit
+    padding: 20px 25px
+    border: 1px solid $headGray
+    margin: 10px 0
+  &-photo
+    height: 143px
+    overflow: hidden
+    margin-bottom: 20px
+    img
+      min-height: 100%
+      min-width: 100%
+  &-desc
+    height: 98px
+    overflow: hidden
+    margin-bottom: 20px
+  &-button
+    height: 36px
+    +dfc
+    background-color: #eef2f5
+    border: 1px solid $headGray
+    span
+      text-transform: uppercase
+      letter-spacing: 2px
+    svg
+      +w(20px)
+      fill: $pink
 .new-units,.news-slider
   .slick-arrow
     +wh(14px)

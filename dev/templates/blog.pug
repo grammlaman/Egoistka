@@ -1,0 +1,79 @@
+extends template/main
+append vars
+  -
+    page_title= 'Главная страница'
+block content
+  main
+    .section
+      .bread-crumps
+        a(href='#') Главная
+        div
+        a(href='#') Контакты
+      .bread-crumps-mob
+        div
+        a(href='#') Назад
+        div
+        a(href='#') Контакты
+    .blog
+      .section
+        .blog-title
+          h2 Блог
+        .pagination
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+            include ../img/keyboard_arrow_right-24px.svg
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+          button.pagination-activ
+            span 1
+          button
+            span 2
+          button
+            span 3
+          button
+            span 4
+          button
+            span 5
+          button
+            span 6
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+            include ../img/keyboard_arrow_right-24px.svg
+        .blog-cont
+          -for(let i=0;i<=5;i++)
+            .blog-unit
+              .blog-photo
+                +img('blog.jpg')
+              .blog-title-sub
+                h3 Уход за грудью. Профилактика потери упругости.
+              .blog-desc
+                p Легально о сиськах #футакойбыть. Вопросы о груди в комментариях считаю жутким невежеством. Социальные сети давно стали публичным пространством, Легально о сиськах #футакойбыть. Вопросы о груди в комментариях считаю жутким невежеством. Социальные сети давно стали публичным пространством,
+              a(href='#').blog-button.button-hover
+                span Читать далее
+                include ../img/keyboard_arrow_right-24px.svg
+                span
+        .pagination
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+            include ../img/keyboard_arrow_right-24px.svg
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+          button.pagination-activ
+            span 1
+          button
+            span 2
+          button
+            span 3
+          button
+            span 4
+          button
+            span 5
+          button
+            span 6
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+          button
+            include ../img/keyboard_arrow_right-24px.svg
+            include ../img/keyboard_arrow_right-24px.svg
