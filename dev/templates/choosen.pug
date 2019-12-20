@@ -1,0 +1,35 @@
+extends template/main
+append vars
+  -
+    page_title= 'Избранные товары'
+block content
+  main
+    .section
+      .bread-crumps
+        a(href='#') Главная
+        div
+        a(href='#') Избранные товары
+      .bread-crumps-mob
+        div
+        a(href='#') Назад
+        div
+        a(href='#') Избранные товары
+    .new.choosen
+      .section.new-cont
+        .blog-title
+          h2 Избранные товары
+        .new-product
+          -for(let i=1;i<=11;i++)
+            .new-slide
+              .new-unit
+                .new-photo
+                  +img('new01.jpg')
+                .new-desc
+                  .new-desc-row
+                    span Бюстгальтер №1340 Sielei new мягкий
+                    button
+                      include ../img/favorite_border-24px.svg
+                  .new-desc-row
+                    span 5300 ₽
+                    button
+                      include ../img/add_shopping_cart-24px.svg

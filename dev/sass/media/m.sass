@@ -715,6 +715,42 @@ aside
   padding: 50px 50px 20px 40px
   background-color: #eef2f5
   position: relative
+  &-show
+    position: relative
+    right: -135px
+    top: -10px
+    z-index: 100
+    &>span
+      display: block
+      background-color: #eef2f5
+      position: absolute
+      strong
+        margin-right: 3px
+    &>span:first-child
+      +wh(15px)
+      border-bottom: 1px solid $headGray
+      border-left: 1px solid $headGray
+      transform: rotate(45deg)
+      z-index: 50
+      top: 3px
+      left: -7px
+    &>span:nth-child(2)
+      +wh(130px,30px)
+      +dfc
+      top: -5px
+      right: -130px
+      border: 1px solid $headGray
+      z-index: 49
+    button
+      +wh(130px,30px)
+      background-color: $pink
+      border: 1px solid $headGray
+      position: absolute
+      right: -130px
+      top: 24px
+      span
+        color: #fff
+        letter-spacing: 2px
   &-clear
     display: flex
     align-items: center
@@ -763,6 +799,7 @@ aside
           top: 1.5px!important
           height: 60%!important
   &-label
+    +w(230px)
     margin-bottom: 4px
     label
       display: flex
@@ -1357,6 +1394,12 @@ aside
         color: #fff
         text-transform: uppercase
         letter-spacing: 2px
+
+.choosen
+  .new-slide
+    +w(145px)
+  .blog-title
+    +w(100%)
 .new-units,.news-slider
   .slick-arrow
     +wh(14px)
