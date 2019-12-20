@@ -1,0 +1,150 @@
+extends template/main
+append vars
+  -
+    page_title= 'Акции'
+block content
+  main
+    .section
+      .bread-crumps
+        a(href='#') Главная
+        div
+        a(href='#') Акции
+      .bread-crumps-mob
+        div
+        a(href='#') Назад
+        div
+        a(href='#') Акции
+    .cart
+      input(type='radio' name='cart-offer' style='display:none')#cart-offer
+      input(type='radio' name='cart-offer' style='display:none')#cart-offer-ok
+      input(type='radio' name='cart-offer' style='display:none')#cart-offer-no
+      .head-form.cart-offer
+        .section
+          .head-form-cont
+            .head-form-title
+              h3 Согласие на обработку персональных данных
+            .head-form-offer
+              input(type='checkbox' style='display:none')#cart-form-offer
+              .head-form-offer-cont
+                span Согласие на обработку персональных данныхНастоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП Иванов (ОГРНИП 123456, ИНН 7890), зарегистрированным в соответствии с законодательством РФ по адресу: 101000, г. Москва, 1-ый Котляковский пер., д. 2 (далее по тексту - Оператор). Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой Согласие на обработку персональных данныхНастоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП Иванов (ОГРНИП 123456, ИНН 7890), зарегистрированным в соответствии с законодательством РФ по адресу: 101000, г. Москва, 1-ый Котляковский пер., д. 2 (далее по тексту - Оператор). Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой Согласие на обработку персональных данныхНастоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП Иванов (ОГРНИП 123456, ИНН 7890), зарегистрированным в соответствии с законодательством РФ по адресу: 101000, г. Москва, 1-ый Котляковский пер., д. 2 (далее по тексту - Оператор). Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой Согласие на обработку персональных данныхНастоящим в соответствии с Федеральным законом № 152-ФЗ «О персональных данных» от 27.07.2006 года свободно, своей волей и в своем интересе выражаю свое безусловное согласие на обработку моих персональных данных ИП Иванов (ОГРНИП 123456, ИНН 7890), зарегистрированным в соответствии с законодательством РФ по адресу: 101000, г. Москва, 1-ый Котляковский пер., д. 2 (далее по тексту - Оператор). Персональные данные - любая информация, относящаяся к определенному или определяемому на основании такой
+              label(for='cart-form-offer')
+                span Развернуть
+                span Свернуть
+                include ../img/keyboard_arrow_right-24px.svg
+            .head-form-input-cont-reg
+              label(for='cart-offer-ok').head-form-submit.button-hover
+                span Принимаю
+                span
+              label(for='cart-offer-no').head-form-submit.head-form-button.button-hover
+                span Не принимаю
+                span
+      .section
+        .cart-cont
+          .blog-title
+            h2 Корзина
+          .cart-units
+            -for(let i=0;i<=1;i++)
+              .cart-unit
+                button.cart-del
+                  include ../img/close-24px.svg
+                .cart-photo
+                  +img('cart.jpg')
+                .cart-desc
+                  h3 Бюстгальтер №1340 Sielei new мягкий
+                  .cart-desc-row
+                    span #[strong Размер:]
+                    span 42
+                  .cart-desc-row
+                    span #[strong Цвет:]
+                    span Белый
+                .cart-price
+                  span 3000 ₽
+                .cart-number
+                  button.cart-button.cart-button-less
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24")
+                      path(d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z")
+                  input(type='number' step='1' min='1' value='1')
+                  button.cart-button.cart-button-more
+                    svg(xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24")
+                      path(d="M8.59 16.59L13.17 12 8.59 7.41 10 6l6 6-6 6-1.41-1.41z")
+                .cart-cost
+                  span 3000 ₽
+        .cart-cont
+          form.cart-form.cont-form
+            .cart-form-cont
+              h3 Покупатель
+              .head-form-input-cont.cart-form-input-name
+                span Ф.И.О.
+                span *
+                input(type='text')
+              .head-form-input-cont
+                span E-mail
+                span *
+                input(type='text')
+              .head-form-input-cont
+                span Телефон
+                span *
+                input(type='text')
+              .head-form-input-cont
+                span Адрес
+                span *
+                input(type='text')
+              .head-form-input-cont
+                span Комментарий к заказу:
+                textarea
+            .cart-form-cont
+              h3 Способ доставки
+              label.cart-form-label
+                input(type='radio' name='cart-del' style='display:none' checked)
+                .cart-form-svg-cont
+                  include ../img/check_box_outline_blank-24px.svg
+                  include ../img/check_box-24px.svg
+                  include ../img/person_pin-24px.svg
+                span Доставка курьером по Москве (+500р)
+              label.cart-form-label
+                input(type='radio' name='cart-del' style='display:none')
+                .cart-form-svg-cont
+                  include ../img/check_box_outline_blank-24px.svg
+                  include ../img/check_box-24px.svg
+                  include ../img/local_shipping-24px.svg
+                span Транспортная компания
+              p Доставка курьером по Москве до 3-х дней
+              p Доставка курьером возможна только по Москве.
+              br
+              p Стоимость: 500 Р
+              p Срок доставки: до 3-х дней
+              h3 Способ оплаты
+              label.cart-form-label
+                input(type='radio' name='cart-pay' style='display:none' checked)
+                .cart-form-svg-cont
+                  include ../img/check_box_outline_blank-24px.svg
+                  include ../img/check_box-24px.svg
+                  include ../img/account_balance_wallet-24px.svg
+                span Оплата курьеру
+              label.cart-form-label
+                input(type='radio' name='cart-pay' style='display:none')
+                .cart-form-svg-cont
+                  include ../img/check_box_outline_blank-24px.svg
+                  include ../img/check_box-24px.svg
+                  include ../img/card_membership-24px.svg
+                span Наложенный платеж
+              .cart-result
+                .cart-form-row
+                  span Товаров на:
+                  span 6000 ₽
+                .cart-form-row
+                  span Доставка:
+                  span 500 ₽
+                .cart-form-row
+                  span #[strong Итого:]
+                  span #[strong 6500 ₽]
+              .head-form-reg-accept.cart-form-reg-accept
+                input(type='checkbox' style='display:none')#head-form-reg
+                label(for='cart-offer')
+                  include ../img/check_box_outline_blank-24px.svg
+                  include ../img/check_box-24px.svg
+                  span Я ознакомлен(а) с настоящим #[span соглашением] и согласен(на) со всеми его пунктами.
+              button.button-hover
+                include ../img/add_shopping_cart-24px.svg
+                span Оформить заказ
+                span

@@ -880,6 +880,232 @@ aside
     svg
       +w(20px)
       fill: $pink
+  &-article
+    &-cont
+      padding: 10px 0 20px
+    &-photo
+      margin-bottom: 10px
+    &-desc
+      h6
+        font-family: $f_bold
+.size
+  &-table
+    padding: 10px 0
+    overflow: auto
+    &-cont
+      +w(710px)
+    &-title
+      display: flex
+      align-items: center
+      margin-bottom: 5px
+      h6
+        +font(12px,$f_bold)
+        &:first-child
+          +w(170px)
+        &:nth-child(2)
+          +w(60px)
+    table
+      border-bottom: 1px solid $headGray
+      padding: 5px 0
+      tr
+        display: block
+        padding: 3px 0
+      tr:nth-child(even)
+        background-color: #faf9f4
+      th
+        font-family: $f_bold
+      th,td
+        +w(50px)
+        text-align: left
+      th:first-child,td:first-child
+        +w(170px)
+      th:nth-child(2),td:nth-child(2)
+        +w(60px)
+    &-head
+      border-top: 1px solid $headGray
+  &-desc strong,&-calc-desc h6,&-calc-desc strong
+    font-family: $f_medium
+    font-weight: 600
+  &-calc
+    &,&-cont
+      padding: 10px 0
+    h3
+      font-family: $f_bold
+    img
+      margin-bottom: 10px
+    &-input
+      +dfc
+      padding: 20px 10px
+      background-color: #f3efe3
+      margin-top: 10px
+      input
+        +w(130px)
+        +font(18px,$f_bold)
+        text-align: center
+        border: none
+        background-color: transparent
+        border-bottom: 1px solid $headGray
+        padding-bottom: 5px
+        margin: 0 5px
+    &-button
+      +wh(300px,64px)
+      +dfc
+      background-color: $pink
+      border: 1px solid $headGray
+      margin-top: 10px
+      span
+        color: #fff
+        text-transform: uppercase
+        letter-spacing: 2px
+      svg
+        fill: #fff
+  &-result
+    +w(100%)
+    border-top: 1px solid $headGray
+    display: none
+    align-items: center
+    flex-direction: column
+    padding-bottom: 20px
+    &-show
+      display: flex
+    &>span
+      font-family: $f_bold
+      strong
+        font-size: 24px
+    &>span,&>button
+      margin-top: 10px
+    button
+      +w(300px)
+
+.cart
+  &-offer
+    display: none
+  &-unit
+    margin-top: 10px
+    padding: 10px
+    display: flex
+    align-items: flex-start
+    flex-wrap: wrap
+    background-color: #eef2f5
+  &-del
+    flex: 0 0 20px
+    svg
+      +w(20px)
+      fill: $pink
+  &-photo
+    +wh(96px)
+    flex: 0 0 96px
+    overflow: hidden
+    margin: 0 10px
+    img
+      min-width: 100%
+      min-height: 100%
+  &-desc
+    height: 96px
+    flex: 0 0 115px
+    display: flex
+    flex-direction: column
+    justify-content: space-between
+    align-items: flex-start
+    &-row
+      display: flex
+      align-items: center
+      span:first-child
+        flex: 0 0 60px
+    h3
+      font-family: $f_bold
+    span
+      font-size: 12px
+      strong
+        font-family: $f_bold
+  &-price,&-number,&-cost
+    flex: 0 0 100%
+    text-align: center
+    margin-top: 10px
+  &-price
+    margin-top: 20px
+  &-number
+    display: flex
+    align-items: center
+    justify-content: center
+    input
+      +w(68px)
+      margin: 0 10px
+      padding-bottom: 5px
+      background-color: transparent
+      border: none
+      border-bottom: 1px solid $headGray
+      font-family: $f_bold
+      text-align: center
+  &-button
+    svg
+      +w(30px)
+    &-less
+      svg
+        transform: rotate(180deg)
+  &-cost
+    span
+      font-family: $f_bold
+  &-form
+    padding-bottom: 20px
+    &-cont
+      h3
+        +font(16px,$f_bold)
+        margin-top: 20px
+        margin-bottom: 20px
+      textarea
+        height: 21px
+        margin-top: 30px
+    &-label
+      display: flex
+      align-items: center
+      margin-bottom: 20px
+
+      input:checked~.cart-form-svg-cont
+        svg:first-child
+          display: none
+        svg:nth-child(2)
+          display: block
+        svg:last-child
+          fill: $pink
+      input:checked~span
+        font-family: $f_bold
+    &-svg-cont
+      +wh(94px,52px)
+      +dfc
+      flex: 0 0 94px
+      margin-right: 20px
+      background-color: #eef2f5
+      svg
+        +w(20px)
+        &:nth-child(2)
+          display: none
+          fill: $pink
+        &:last-child
+          +w(40px)
+          margin-left: 10px
+          fill: #fff
+    &-row
+      display: flex
+      align-items: center
+      margin-bottom: 10px
+      span:first-child
+        flex: 0 0 200px
+      strong
+        font-family: $f_bold
+    button
+      +wh(100%,44px)
+      +dfc
+      background-color: $pink
+      border: 1px solid $headGray
+      margin-top: 20px
+      span
+        color: #fff
+        letter-spacing: 2px
+        text-transform: uppercase
+      svg
+        fill: #fff
+        margin-right: 5px
 .new-units,.news-slider
   .slick-arrow
     +wh(14px)
@@ -945,18 +1171,21 @@ aside
   display: block
 #head-offer:checked~.header .head-offer
   display: block
+#cart-offer:checked~.cart-offer
+  display: block
 #head-call:checked~.header .head-call
   display: block
 #head-buy:checked~.header .head-buy
   display: block
-#head-offer-ok:checked~.header .head-reg .section form .head-form-reg-accept label
+#head-offer-ok:checked~.header .head-reg .section form .head-form-reg-accept label,
+#cart-offer-ok:checked~.section .cart-cont form .cart-form-cont .head-form-reg-accept label
   svg:first-child
     display: none
   svg:nth-child(2)
     display: block
-#head-form-offer:checked~.head-form-offer-cont
+#head-form-offer:checked~.head-form-offer-cont,#cart-form-offer:checked~.head-form-offer-cont
   max-height: 5000px
-#head-form-offer:checked~label
+#head-form-offer:checked~label,#cart-form-offer:checked~label
   svg
     transform: rotate(-90deg)
   span:nth-child(2)

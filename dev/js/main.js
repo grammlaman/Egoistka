@@ -101,6 +101,11 @@ $(function(){
             el.classList.add('sort-activ')
         }
     })
+    let calcBut = document.querySelector('.size-calc-button');
+    let sizeRes = document.querySelector('.size-result');
+    calcBut.onclick = function (el) {
+        sizeRes.classList.add('size-result-show');
+    }
 
 
 

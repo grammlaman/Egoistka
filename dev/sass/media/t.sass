@@ -302,12 +302,59 @@ aside
     display: flex
     justify-content: space-between
     flex-wrap: wrap
+  &-title
+    h2
+      font-size: 18px
   &-unit
     +w(360px)
   .pagination
     +w(300px)
     margin-left: auto
     display: flex
+  &-article
+    &-cont
+      display: flex
+      flex-wrap: wrap
+.size
+  margin-top: 30px
+  &-table,&-calc
+    padding: 20px 0
+  &-calc
+    h3
+      font-size: 18px
+    &-cont
+      display: flex
+      align-items: center
+      &:last-child
+        margin-left: 235px
+      img
+        margin-right: 10px
+    &-input
+      +w(360px)
+.cart
+  padding-top: 30px
+  padding-bottom: 100px
+  &-cont
+    .blog-title
+      margin-bottom: 20px
+  &-unit
+    align-items: center
+    justify-content: space-between
+  &-desc
+    flex: 0 0 175px
+    height: 76px
+  &-price,&-number,&-cost
+    flex: inherit
+    margin: 0
+  &-form
+    flex-direction: row
+    &-cont
+      flex: 0 0 49%
+    &-reg
+      &-accept
+        transform: translateX(-105%)
+    button
+      margin-top: -60px
 .bread-crumps
   display: flex
   &-mob

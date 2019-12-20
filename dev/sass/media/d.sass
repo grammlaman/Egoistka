@@ -88,7 +88,7 @@ header
   &-units
     padding: 10px 20px
     &-page
-      padding: 10px 0
+      padding: 20px 0
 
 .stocks
   &-unit
@@ -154,9 +154,6 @@ header
     margin-right: 28px
 
 .delievery
-  &-label
-    &-cont
-      margin-top: 10px
   &-p-first
     margin-bottom: 84px!important
   &-row
@@ -170,9 +167,43 @@ header
   input
     +w(50%)
   textarea
-    +w(600px)
+    +w(550px)
   button
     margin: 10px 0 0
+.blog
+  &-article
+    &-desc
+      flex: 0 0 calc(95% - 477px)
+      line-height: 31px
+      &:last-child
+        flex: 0 0 95%
+.size
+  &-calc
+    &-cont
+      &:last-child
+        margin-left: 425px
+      img
+        margin: 0 100px
+  table
+    td,th
+      +w(90px)
+.cart
+  &-unit
+    margin-top: 16px
+    justify-content: flex-start
+  &-photo
+    margin-right: 20px
+    margin-left: 30px
+  &-desc
+    flex: 0 0 530px
+  &-number
+    margin: 0 75px 0 55px
+  &-form
+    &-input-name
+      input
+        +w(550px)
+    button
+      margin-top: -60px
 .bread-crumps
   a:hover
     text-decoration: underline
