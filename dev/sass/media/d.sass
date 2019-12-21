@@ -245,7 +245,35 @@ header
       margin-top: 10px
 .filter
   &-show
-    display: block
+    position: absolute
+    right: -133px
+    top: -15px
+    z-index: 100
+    &>span
+      display: block
+      background-color: #eef2f5
+      strong
+        margin-right: 3px
+    &>span:first-child
+      +wh(15px)
+      border-bottom: 1px solid $headGray
+      border-left: 1px solid $headGray
+      transform: rotate(45deg) translate(11px,21px)
+    &>span:nth-child(2)
+      +wh(130px,30px)
+      +dfc
+      border: 1px solid $headGray
+    button
+      +wh(130px,30px)
+      background-color: $pink
+      border: 1px solid $headGray
+      margin-top: -1px
+      span
+        color: #fff
+        letter-spacing: 2px
+  &-label
+    &:hover .filter-show
+      display: block
 .choosen
   .new
     &-slide
