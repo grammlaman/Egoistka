@@ -70,6 +70,15 @@ block content
           .head-form-input-cont
             span Сообщение
             textarea
+          .recapcha
+            label
+              input(type='checkbox' style='display:none')
+              span
+                span
+                span
+                  span
+                span Я не робот
+            +img('recapcha.jpg')
           .head-form-input-cont-reg
             button.head-form-submit.button-hover
               span Отправить

@@ -422,6 +422,8 @@ a
       svg
         fill: $pink
 .stocks
+  &-catalog
+    display: none
   &-unit
     +wh(295px,146px)
     margin: 10px 0
@@ -632,6 +634,7 @@ a
     flex-wrap: wrap
     padding: 10px 0
     .new-slide
+      +w(145px)
       display: block
       margin: 0 2.5px 5px
   &-sell,&-stock
@@ -862,6 +865,8 @@ aside
       border: none
       border-bottom: 1px solid $headGray
       display: block
+.recapcha
+  display: none
 .blog
   &-title
     h2
@@ -914,9 +919,9 @@ aside
       align-items: center
       margin-bottom: 5px
       h6
-        +font(12px,$f_bold)
+        +font(10px,$f_bold)
         &:first-child
-          +w(170px)
+          +w(140px)
         &:nth-child(2)
           +w(60px)
     table
@@ -933,7 +938,7 @@ aside
         +w(50px)
         text-align: left
       th:first-child,td:first-child
-        +w(170px)
+        +w(140px)
       th:nth-child(2),td:nth-child(2)
         +w(60px)
     &-head
