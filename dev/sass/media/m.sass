@@ -96,6 +96,8 @@ a
     position: fixed
     z-index: 100
     top: 0
+    left: 0
+    right: 0
     padding-top: 100px
     padding-bottom: 100px
     display: none
@@ -105,6 +107,7 @@ a
       flex-direction: column
       background-color: #fff
       position: relative
+      z-index: 110
       padding: 60px 25px 30px
     &-title
       h3
@@ -217,6 +220,11 @@ a
       img
         flex: 0 0 127px
         +wh(127px,46px)
+  &-offer
+    background-color: transparent
+  &-bgc
+    display: block
+    background: none
   &-buy
     &-desc
       margin-top: 20px
@@ -431,6 +439,7 @@ a
     align-items: center
   &-photo
     flex: 0 0 144px
+    display: block
     overflow: hidden
     img
       +w(100%)
@@ -535,6 +544,7 @@ a
           +wh(20px)
   &-photo
     +wh(100%,190px)
+    display: block
     overflow: hidden
     img
       min-width: 100%
@@ -873,6 +883,7 @@ aside
       font-family: $f_bold
     &-sub
       +font(14px,$f_bold,$pink)
+      display: block
       margin-bottom: 20px
   &-unit
     padding: 20px 25px
@@ -880,6 +891,7 @@ aside
     margin: 10px 0
   &-photo
     height: 155px
+    display: block
     overflow: hidden
     margin-bottom: 20px
     img
@@ -1014,6 +1026,7 @@ aside
       fill: $pink
   &-photo
     +wh(96px)
+    display: block
     flex: 0 0 96px
     overflow: hidden
     margin: 0 10px
@@ -1032,7 +1045,7 @@ aside
       align-items: center
       span:first-child
         flex: 0 0 60px
-    h3
+    a
       font-family: $f_bold
     span
       font-size: 12px
@@ -1130,6 +1143,13 @@ aside
   padding-top: 10px
   h2
     font-size: 16px
+  &-close
+    +wh(100%)
+    position: fixed
+    display: block
+    top: 0
+    right: 0
+    left: 0
   &-slider
     padding-top: 20px
     &-main

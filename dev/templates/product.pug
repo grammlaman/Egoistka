@@ -17,8 +17,9 @@ block content
       a(href='#') Назад
       div
       a(href='#') Бюстгальтер №1340 Sielei new мягкий
-  input(type='checkbox' style='display:none')#prod-deliv
-  input(type='checkbox' style='display:none')#prod-buy
+  input(type='radio' name='prod' style='display:none')#prod-deliv
+  input(type='radio' name='prod' style='display:none')#prod-buy
+  input(type='radio' name='prod' style='display:none')#prod-close
   .product
     .section
       .product-cont
@@ -114,24 +115,26 @@ block content
       .catalog-title
         h3 Похожие товары
       .new-product
-        -for(let i=1;i<=4;i++)
-          .new-slide
-            .new-unit
-              .new-photo
-                +img('new0' + i + '.jpg')
-              .new-desc
-                .new-desc-row
-                  span Бюстгальтер №1340 Sielei new мягкий
-                  button
-                    include ../img/favorite_border-24px.svg
-                .new-desc-row
-                  span 5300 ₽
-                  button
-                    include ../img/add_shopping_cart-24px.svg
+        .new-units
+          -for(let i=1;i<=5;i++)
+            .new-slide
+              .new-unit
+                a(href='#').new-photo
+                  +img('new0' + i + '.jpg')
+                .new-desc
+                  .new-desc-row
+                    a(href='#') Бюстгальтер №1340 Sielei new мягкий
+                    button
+                      include ../img/favorite_border-24px.svg
+                  .new-desc-row
+                    span 5300 ₽
+                    button
+                      include ../img/add_shopping_cart-24px.svg
   .product-padding
   .product-deliv-bgc
+    label(for='prod-close').product-close
     .product-deliv
-      label(for='prod-deliv').form-close
+      label(for='prod-close').form-close
         include ../img/close-24px.svg
       div
         span Расстояние
@@ -157,14 +160,14 @@ block content
         include ../img/local_shipping-24px.svg
         p Доставка заказов на более отдаленные расстояния, для которых не указаны расценки, осуществляетсяпо согласованию через транспортные компании
     form.product-buy-form
-      label(for='prod-buy').form-close
+      label(for='prod-close').form-close
         include ../img/close-24px.svg
       h3 Купить в 1 клик
       span #[strong Товар:] ДЕФИЛЕ БЮСТГАЛЬТЕР PUSH-UP
       span Ваше имя *
       input(type='text')
       span Номер телефона *
-      input(type='text')
+      input(type='text' value='+7')
       .head-form-capcha
         span Защита от автоматических сообщений
         input(type='text')

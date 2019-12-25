@@ -3,7 +3,7 @@
 .catalog-units.catalog-units-page
     each stock in stocks
         .stocks-unit.stocks-unit-page
-            .stocks-photo
+            a(href='#').stocks-photo
                 +img(stock['img'])
             .stocks-desc(class!=stock['className'])
                 span.stocks-h3!= stock['title']
