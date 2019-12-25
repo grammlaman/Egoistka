@@ -310,6 +310,10 @@ aside
   &-title
     h2
       font-size: 18px
+  &-photo
+    height: 175px
+    img
+      min-height: 175px
   &-unit
     +w(360px)
   .pagination
@@ -400,13 +404,20 @@ aside
     +w(700px)
     margin: auto
     top: 100px
+    div
+      padding: 10px 15px
     div:last-child
       align-items: center
-      padding: 0 50px
+      padding: 20px 50px
   &-buy-form
     +w(700px)
     margin: auto
     padding: 50px 100px 20px
+  &-new
+    .new-product
+      flex-direction: row
+  &-padding
+    height: 50px
 .choosen
   .blog-title
     margin: 20px 0 10px

@@ -109,7 +109,7 @@ block content
             button.button-hover
               span Отправить
               span
-  .new
+  .new.product-new
     .section.new-cont
       .catalog-title
         h3 Похожие товары
@@ -128,6 +128,7 @@ block content
                   span 5300 ₽
                   button
                     include ../img/add_shopping_cart-24px.svg
+  .product-padding
   .product-deliv-bgc
     .product-deliv
       label(for='prod-deliv').form-close
@@ -164,6 +165,10 @@ block content
       input(type='text')
       span Номер телефона *
       input(type='text')
+      .head-form-capcha
+        span Защита от автоматических сообщений
+        input(type='text')
+        +img('capcha.jpg')
       button.button-hover
         span Отправить
         span

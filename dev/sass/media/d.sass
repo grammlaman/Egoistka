@@ -53,6 +53,12 @@ header
   &-form
     label:hover
       text-decoration: underline
+  &-offer
+    .head-form
+      &-cont
+        padding: 30px 25px 20px
+      &-offer
+        margin-top: 30px
 .mob
   &-nav
     &-but
@@ -219,6 +225,8 @@ header
     &:nth-child(2)
       display: block
 .blog
+  &-desc
+    height: 65px
   &-article
     &-desc
       flex: 0 0 calc(95% - 477px)
@@ -291,6 +299,8 @@ header
     &-label
       margin-left: 0
       margin-top: 10px
+  &-deliv
+    padding: 50px 30px 10px
 .filter
   &-show
     position: absolute
@@ -341,7 +351,7 @@ header
     position: absolute
     top: 0
     border: 1px solid $headGray
-  span:first-child
+  span:first-child,svg
     position: relative
     z-index: 50
   &:hover
@@ -349,6 +359,8 @@ header
       text-decoration: none!important
     span:first-child
       color: $headGray
+    svg
+      fill: $headGray
     span:last-child
       transform: translateX(0)
 .foot
